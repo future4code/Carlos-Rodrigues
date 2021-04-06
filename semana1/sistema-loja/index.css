@@ -1,38 +1,29 @@
-*{  margin: 0px;
-    padding: 0px;
-}
 .title {
     background-color: #4ac3bb;
     text-align: center;
 }
 
-.menu {
-    background-color: black;
-    text-align: center;
-    font-size: 16px;
-    height: 40px;
-    padding-top: 5vh;
-}
-
 .content {
     text-align: center;
-    padding-top: %;
-    background-image:url(./img/moto.jpg);
-    background-size: 1380px 800px;
-    height: 420px;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-top: 2%;
+    background-image:url(./img/moto1.jpg);
+    color: white;
+    background-size: cover;
+    height: 440px;
+}
+
+body { 
+    background-color: gray;
 }
 
 .img-rede {
     width: 48px;
 }
 
-.img{
-    padding-right: 240px
-
-}
-
-a {
-    margin-right: 32px;
-    color: white;
-    align-items: center;
+.redes-sociais {
+    padding-top: 1.5vh;
+    background-color: gray;
+    text-align: center;
 }
