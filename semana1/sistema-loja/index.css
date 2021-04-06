@@ -1,0 +1,38 @@
+*{  margin: 0px;
+    padding: 0px;
+}
+.title {
+    background-color: #4ac3bb;
+    text-align: center;
+}
+
+.menu {
+    background-color: black;
+    text-align: center;
+    font-size: 16px;
+    height: 40px;
+    padding-top: 5vh;
+}
+
+.content {
+    text-align: center;
+    padding-top: %;
+    background-image:url(./img/moto.jpg);
+    background-size: 1380px 800px;
+    height: 420px;
+}
+
+.img-rede {
+    width: 48px;
+}
+
+.img{
+    padding-right: 240px
+
+}
+
+a {
+    margin-right: 32px;
+    color: white;
+    align-items: center;
+}
