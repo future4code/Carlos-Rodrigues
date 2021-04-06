@@ -1,3 +1,13 @@
+.title {
+    text-align: center;
+    padding-top: 48px;
+}
+
 .produt {
     width: 48px;
+}
+
+.table {
+    padding-top: 48px;
+    margin: auto;
 }

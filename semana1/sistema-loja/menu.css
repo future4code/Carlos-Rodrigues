@@ -1,9 +1,10 @@
 *{  margin: 0px;
     padding: 0px;
 }
-.title {
+.header {
     background-color: #4ac3bb;
     text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .menu {
     background-color: black;
