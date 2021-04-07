@@ -18,14 +18,23 @@
     font-size: 16px;
     height: 40px;
     position: sticky;
-    margin-top: 36px;
+    margin-top: 40px;
     top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     }
 
     a {
     margin-right: 32px;
     color: white;
     align-items: center;
+}
+
+.content{
+    background-image:url(./img/fj.jpg);
+    background-size: cover;
+    height: 1080px;    
 }
 
 .img-rede {
