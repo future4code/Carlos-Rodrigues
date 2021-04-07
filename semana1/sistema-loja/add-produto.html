@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Adicionar Produto</title>
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="add-produto.css">
 </head>
 <body>
     <div class="header">
@@ -15,43 +16,61 @@
     
     <div class="menu">
         <a href="./index.html"> <strong>Página Inicial</strong></a>
+        <a href="./pagina-de-venda.html"><strong>Produtos</strong></a>
         <a href="./ctrl-estoque.html"> <strong>Controle de Estoque</strong></a>
         <a href="./add-produto.html"> <strong>Adicionar Produto</strong></a>
-        <a href="./funcionarios.html"> <strong>Funcionários</strong></a>
+        <a href="./funcionarios.html"> <strong>Funcionários</strong></a>    
     </div>
 
     
-    <h2>Adicionar Produto</h2>
-    <form action="">
-        <div>
-            <label for="link-foto">Link para foto: </label>
-            <input type="url" id="link-foto" name="link-foto">
-        </div>
-        
-        <div>
-            <label for="descricao">Descrição do produto: </label>
-            <!-- Adicione o id apropriado para o input abaixo -->
-            <input type="text" id="descricao" name="descrição">
-        </div>
-        
-        <div>
-            <label for="preco">Preço (em R$): </label>
-            <!-- Adicione o id apropriado e o type para receber números abaixo -->
-            <input type="number" id="preco" name="preço">
-        </div>
-        
-        <div>
-            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
-            <label for="quantidade">Quantidade disponível: </label>
-            <input type="number" id="quantidade" name="quantidade disponível">
-        </div>
+    <div class="add-produto">
+        <h2>Adicionar Produto</h2>
+    </div>
 
-        <div class="form-add">
-            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
-            <button type="submit">Adicionar</button>
+    <div class="line"></div>
+    
+    <div class="forms">
+        <form action="">
+            <div class="form-geral"> 
+                <label for="link-foto">Link para foto: </label>
+                <input class="input1" type="url" id="link-foto" name="link-foto">
+            </div>
+            
+            <div class="form-geral">
+                <label for="descricao">Descrição do produto: </label>
+                <!-- Adicione o id apropriado para o input abaixo -->
+                <input class="input2" type="text" id="descricao" name="descrição">
+            </div>
+            
+            <div class="form-geral">
+                <label for="preco">Preço (em R$): </label>
+                <!-- Adicione o id apropriado e o type para receber números abaixo -->
+                <input class="input3" type="number" id="preco" name="preço">
+            </div>
+            
+            <div class="form-geral">
+                <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+                <label for="quantidade">Quantidade disponível: </label>
+                <input class="input4" type="number" id="quantidade" name="quantidade disponível">
+            </div>
+    
+            <div class="form-add">
+                <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+                <button type="submit">Adicionar</button>
+            </div>
+    
+        </form>
+    
+    </div>
+       
+    <div class="footer">
+        <strong><p>Siga-nos nas redes sociais!</p></strong>
+
+        <div class="img">
+            <img class="img-rede" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+            <img class="img-rede" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+            <img class="img-rede" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
         </div>
-
-    </form>
-
+    </div>
 </body>
 </html>

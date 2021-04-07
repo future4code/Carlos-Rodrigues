@@ -1,8 +1,3 @@
-.title {
-    background-color: #4ac3bb;
-    text-align: center;
-}
-
 .content {
     text-align: center;
     font-size: 18px;
@@ -11,19 +6,10 @@
     background-image:url(./img/moto1.jpg);
     color: white;
     background-size: cover;
-    height: 440px;
+    height: 840px;
+    width: 100%;
 }
 
-body { 
+/* body { 
     background-color: gray;
-}
-
-.img-rede {
-    width: 32px;
-}
-
-.redes-sociais {
-    padding-top: 1.5vh;
-    background-color: gray;
-    text-align: center;
-}
+} */
