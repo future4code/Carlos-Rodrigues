@@ -26,7 +26,7 @@ button:focus {
 }
 
 /* img {
-    width: px;
+    width: 100px;
 } */
 
 div > div {
@@ -108,6 +108,22 @@ table {
 
 td button {
     background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: black;
+}
+
+td button:active {
+    background-color: #af9b41 ;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+}
+
+td button:hover {
+    background-color: #af9b41 ;
     width: 150px;
     height: 30px;
     border-radius: 5px;
