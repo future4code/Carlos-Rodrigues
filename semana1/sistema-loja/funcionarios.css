@@ -1,0 +1,20 @@
+.funcionarios{
+    padding-top: 64px;
+    padding-left: 64px;
+} 
+
+.line {
+    background-color: #4ac3bb;
+    height: 4px;
+    margin-right: 83%;
+    margin-left: 64px;
+    
+}
+
+.lista-func {
+    padding-top: 32px;
+    padding-left: 96px;
+    margin: 24px;
+    font-size: 20px;
+}
+

@@ -1,13 +1,40 @@
 .title {
-    text-align: center;
-    padding-top: 48px;
+    padding-left: 64px;
+    padding-top: 64px;
+}
+
+.line {
+    background-color: #4ac3bb;
+    height: 4px;
+    margin-right: 78%;
+    margin-left: 64px;
+    
 }
 
 .produt {
     width: 48px;
 }
 
-.table {
+table {
     padding-top: 48px;
     margin: auto;
+}
+
+.rotulos {
+    margin-left: 90px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+.ft, .descr, .preço, .qtd {
+    padding-right: 24px;
+    padding-left: 24px;
+    text-align: center;
+}
+
+td, th{
+    padding: 10px;
+    border: 1px solid gray;
 }
