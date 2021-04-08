@@ -1,0 +1,41 @@
+
+.add-produto {
+    padding-left: 64px;
+    padding-top: 64px;
+}
+
+.line {
+    background-color: #4ac3bb;
+    height: 4px;
+    margin-right: 80%;
+    margin-left: 64px;
+    
+}
+
+.form-geral {
+    margin:24px;
+}
+
+.input1 {
+    margin-left: 80px;
+    border: 1px solid black;
+}
+
+.input2 {
+    margin-left: 34px;
+    border: 1px solid black;
+}
+
+.input3 {
+    margin-left: 78px;
+    border: 1px solid black;
+}
+
+.input4 {
+    margin-left: 27px;
+    border: 1px solid black;
+}
+
+.form-add {
+    text-align: center;
+}
