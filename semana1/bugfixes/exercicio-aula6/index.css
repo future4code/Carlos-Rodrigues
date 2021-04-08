@@ -119,6 +119,10 @@ td button {
     height: 100px;
 }
 
+.img {
+    width: 48px;
+}
+
 
 #back-button {
     background-color: white;
@@ -133,3 +137,4 @@ td button {
 #back-button:hover {
     background-color: #635a3d
 }
+
