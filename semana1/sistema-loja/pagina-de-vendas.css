@@ -1,0 +1,45 @@
+.title {
+    padding-top: 64px;
+    padding-left: 64px;
+}
+
+.line {
+    background-color: #4ac3bb;
+    height: 4px;
+    margin-right: 88%;
+    margin-left: 64px;
+    
+}
+
+.form-pg {
+    margin: 24px;
+}
+
+.input1 {
+    margin-left: 48px;
+    border: 1px solid black;
+}
+
+.input2 {
+    margin-left: 79px;
+    border: 1px solid black;
+}
+
+.input3 {
+    margin-left: 20px;
+    border: 1px solid black;
+}
+
+.mtd {
+    text-align: center;    
+}
+
+.card {
+    margin-left: 12px;
+}
+
+.cash {
+    margin-left: 24px;
+}
+
+

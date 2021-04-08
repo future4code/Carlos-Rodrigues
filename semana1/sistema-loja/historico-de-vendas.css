@@ -1,0 +1,17 @@
+h2 {
+    padding-top: 64px;
+    padding-left: 64px;
+}
+.line {
+    background-color: #4ac3bb;
+    height: 4px;
+    margin-right: 79%;
+    margin-left: 64px;
+    
+}
+
+table {
+    padding-top: 64px;
+    margin: auto;
+
+}

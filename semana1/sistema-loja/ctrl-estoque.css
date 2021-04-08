@@ -6,7 +6,7 @@
 .line {
     background-color: #4ac3bb;
     height: 4px;
-    margin-right: 80%;
+    margin-right: 78%;
     margin-left: 64px;
     
 }
@@ -15,7 +15,7 @@
     width: 48px;
 }
 
-.table {
+table {
     padding-top: 48px;
     margin: auto;
 }
@@ -34,3 +34,7 @@
     text-align: center;
 }
 
+td, th{
+    padding: 10px;
+    border: 1px solid gray;
+}
