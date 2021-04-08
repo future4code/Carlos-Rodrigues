@@ -27,6 +27,8 @@ input {
     border-left: none;
     border-right: none;
     border-bottom: 2px solid black;
+    outline: none;
+
 }
 
 button:focus {
@@ -56,10 +58,12 @@ div>p:first-child {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    outline: none;
 }
 
 .botao-amarelo:hover {
     background-color: #c44f00;
+    outline: none;
 }
 
 .container {
@@ -84,8 +88,7 @@ div>p:first-child {
 }
 
 #container-de-descricao>ol {
-    padding: 15px 40%;
-    list-style-type: decimal;
+    padding: 15px 42%;
 }
 
 #container-para-comprar {
@@ -167,6 +170,7 @@ td button:hover {
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #635a3d;
+    box-shadow: none;
 }
 
