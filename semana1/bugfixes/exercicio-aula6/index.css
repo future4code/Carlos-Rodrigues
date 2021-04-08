@@ -84,7 +84,8 @@ div>p:first-child {
 }
 
 #container-de-descricao>ol {
-    padding: 15px 0px;
+    padding: 15px 40%;
+    list-style-type: decimal;
 }
 
 #container-para-comprar {
@@ -150,6 +151,10 @@ td button:hover {
     width: 38px;
 }
 
+.button {
+    text-align: center;
+    padding-top: 128px;
+}
 
 #back-button {
     background-color: white;
