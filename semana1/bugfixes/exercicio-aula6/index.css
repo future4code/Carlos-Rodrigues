@@ -25,9 +25,9 @@ button:focus {
     color: white;
 }
 
-img {
-    width: 100px;
-}
+/* img {
+    width: px;
+} */
 
 div > div {
     padding-top: 64px;
@@ -37,9 +37,9 @@ div>p:first-child {
     display: block;    
 }
 
-div img {
+/* div img {
     background: black;
-}
+} */
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -120,7 +120,7 @@ td button {
 }
 
 .img {
-    width: 48px;
+    width: 38px;
 }
 
 
