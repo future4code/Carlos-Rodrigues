@@ -14,8 +14,12 @@ h2 {
     padding: 10px 5px 10px 5px;
     color: white;
     text-align: center;
+    font-family: 'Roboto';
 }
 
+p {
+    font-family: 'Roboto';
+}
 input {
     height: 20px;
     width: 500px;
@@ -93,7 +97,6 @@ div>p:first-child {
     font-size: 60px;
 }
 
-
 /**
   *
   *  ESTILOS COMPRAR 
@@ -107,7 +110,11 @@ div:last-child {
 
 table {
     width: 60%;
-    margin: auto;
+    margin: auto;    
+}
+
+.text-table {
+    font-family: 'Roboto';
 }
 
 td button {
