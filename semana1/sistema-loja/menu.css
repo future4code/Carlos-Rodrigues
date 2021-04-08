@@ -1,0 +1,20 @@
+*{  margin: 0px;
+    padding: 0px;
+}
+.header {
+    background-color: #4ac3bb;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.menu {
+    background-color: black;
+    text-align: center;
+    font-size: 16px;
+    height: 40px;
+    padding-top: 5vh;
+}
+a {
+    margin-right: 32px;
+    color: white;
+    align-items: center;
+}
