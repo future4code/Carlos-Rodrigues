@@ -12,27 +12,59 @@ nav {
     border: 3px solid blue;
     display: flex;
     justify-content: flex-end;
+    position: sticky;
+    top: 0;
+
 }
 
-a {
+.nav-btt {
     margin: 16px;
     padding-right: 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#quem-sou {
+    border: 20px solid green;
+}
+
+#experiencias {
+    border: 20px solid yellow;
+}
+
+#habilidades {
+    border: 20px solid red;
+}
+
+#portfolio {
+    border: 20px solid black;
+}
+footer {
+    text-align: center;
+    background-image: url(./img/fundo-azul-degrade\ .jpg);
+    background-size: cover;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .linkedin {
     width: 52px;
+    margin-right: 20px;
 }
 
 .git {
     width: 40px;
-    padding-bottom: 4px;
+    padding-bottom: 5px;
+    margin-right: 20px;
 }
 
 .inst {
     width: 70px;
+    margin-right: 20px;
 }
 
 .email {
     width: 40px;
-    padding-bottom: 3px;
+    padding-bottom: 4px;
 }
