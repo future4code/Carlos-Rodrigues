@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+main {
+    border: 3px solid gray;
+    height: 840px;
+    
+}
+
+nav {
+    border: 3px solid blue;
+    display: flex;
+    justify-content: flex-end;
+}
+
+a {
+    margin: 16px;
+    padding-right: 16px;
+}
+
+.linkedin {
+    width: 52px;
+}
+
+.git {
+    width: 40px;
+    padding-bottom: 4px;
+}
+
+.inst {
+    width: 70px;
+}
+
+.email {
+    width: 40px;
+    padding-bottom: 3px;
+}
