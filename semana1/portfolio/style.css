@@ -9,23 +9,59 @@ main {
 }
 
 nav {
-    border: 3px solid blue;
     display: flex;
     justify-content: flex-end;
     position: sticky;
     top: 0;
+    padding-right: 12px;
 
 }
-
+nav > h2 {
+    padding-right: 320px;
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    color: #3F7EE5 ;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .nav-btt {
     margin: 16px;
     padding-right: 16px;
     text-decoration: none;
     font-weight: bold;
+    color: #3F7EE5;
+    border: 2px solid #3F7EE5;
+    padding-left: 20px;
+    border-radius: 12px;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
 }
 
+#inicio {
+    height: 20px;
+    background-image: url(./img/portfolio.jpg);
+    background-size: cover;
+    height: 520px;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#quem-sou > h3 {
+    text-align: center;
+}
+
+#quem-sou > p {
+    text-indent: 32px;
+    
+}
 #quem-sou {
-    border: 20px solid green;
+     
 }
 
 #experiencias {
@@ -43,9 +79,10 @@ footer {
     text-align: center;
     background-image: url(./img/fundo-azul-degrade\ .jpg);
     background-size: cover;
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 100%;
+    border-top: 1px solid black;
 }
 
 .linkedin {
