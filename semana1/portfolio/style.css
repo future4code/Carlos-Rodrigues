@@ -4,11 +4,9 @@
     font-family:'Open Sans', 'Helvetica Neue', sans-serif;
 }
 main {
-    border: 3px solid purple;
-    height: 840px;
-    
+    border: 3px solid purple;    
 }
-
+/* NAVEGAÇÃO */
 nav {
     display: flex;
     justify-content: flex-end;
@@ -35,8 +33,9 @@ nav > h2 {
     display: flex;
     align-items: center;
     text-align: center;
-
 }
+
+/* INICIO */
 
 #inicio {
     height: 20px;
@@ -49,6 +48,8 @@ nav > h2 {
     align-items: center;
 }
 
+/* QUEM SOU EU */
+
 #quem-sou > h3 {
     text-align: center;
 }
@@ -59,8 +60,7 @@ nav > h2 {
     padding-top: 40px;
     padding-left: 24px;
     padding-right: 24px;
-    font-size: 18px;
-    
+    font-size: 18px;   
 }
 #quem-sou {
      background-color: #39383b;
@@ -70,15 +70,15 @@ nav > h2 {
      padding-bottom: 64px;
 }
 
+/* EXPERIÊNCIAS */
+
 #experiencias {
     display: flex;
     justify-content: space-around;
     text-align: center;
     padding-top: 24px;
     padding-bottom: 24px;
-
 }
-
 #graduacao{
     width: 35%;
     color: #3F7EE5;
@@ -87,18 +87,15 @@ nav > h2 {
     border-radius: 24px;
     padding-bottom: 18px;
 }
-
 #graduacao > p {
     padding-top: 12px;
 }
-
 #graduacao > ul {
     text-align: justify;
     padding-top: 24px;
     padding-left: 64px;
 
 }
-
 #empregos {
     background-color: white;
     width: 35%;
@@ -108,31 +105,27 @@ nav > h2 {
     border-radius: 24px;
     padding-bottom: 18px;
 }
-
 #empregos > ul {
     text-align: justify;
     padding-top: 24px;
     padding-left: 80px;
 }
 
-.img-grad {
-    width: 64px;
-}
-
-.img-job {
-    width: 72px;
-}
-
-
-
+/* HABILIDADES */
 
 #habilidades {
     border: 20px solid red;
 }
 
+/* PORTFOLIO */
+
 #portfolio {
     border: 20px solid black;
+    height: 200px;
 }
+
+/* FOOTER */
+
 footer {
     text-align: center;
     background-image: url(./img/fundo-azul-degrade\ .jpg);
@@ -143,11 +136,18 @@ footer {
     border-top: 1px solid black;
 }
 
+/* IMAGENS */
+
+.img-grad {
+    width: 64px;
+}
+.img-job {
+    width: 72px;
+}
 .linkedin {
     width: 52px;
     margin-right: 20px;
 }
-
 .git {
     width: 40px;
     padding-bottom: 5px;
@@ -158,7 +158,6 @@ footer {
     width: 70px;
     margin-right: 20px;
 }
-
 .email {
     width: 40px;
     padding-bottom: 4px;
