@@ -14,6 +14,29 @@ body {
     align-items: center;
 }
 
+#main-container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 5fr 3fr 1fr ;    
+}
+
+#top-container {
+    display: grid;
+    grid-template-columns: 3fr 10fr;    
+}
+
+#middle-container {
+    display: grid;
+    grid-template-columns: 5fr 2.5fr 2.5fr;
+}
+
+#content2 {
+    height: 100%;
+}
+
+#image, #extra {
+    height: 50%;
+}
 .green-background {
     background-color: green;
 }
@@ -28,16 +51,20 @@ body {
 
 .blue-background {
     background-color: blue;
+    height: 100%;
 }
 
 .red-background {
     background-color: red;
+    height: 100%;
 }
 
 .lightgreen-background {
     background-color: lightgreen;
+    height: 100%;
 }
 
 .purple-background {
     background-color: purple;
+    height: 100%;
 }
