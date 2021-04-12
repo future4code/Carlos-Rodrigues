@@ -116,10 +116,71 @@ nav > h2 {
 /* HABILIDADES */
 
 #habilidades {
-    border: 20px solid red;
-    height: 900px;
+    background-color: #6b6b6b;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 18px;
+    
 }
 
+#front-end {
+    border: 2px solid white;
+    width: 25%;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    border-radius: 24px;
+}
+
+#back-end {
+    border: 2px solid white;
+    width: 25%;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    border-radius: 24px;
+}
+
+#soft-skills {
+    border: 2px solid white;
+    width: 25%;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    border-radius: 24px;
+}
+#front-end > p {
+    text-align: center;
+    padding-top: 12px;
+    color: white;
+}
+#front-end > ul {
+    text-align: justify;
+    padding-top: 24px;
+    padding-left: 64px;
+    padding-bottom: 40px;
+    color: white;    
+}
+#back-end > p {
+    padding-top: 12px;
+    color: white;
+    
+}
+#back-end > ul {
+    text-align: justify;
+    padding-top: 24px;
+    padding-left: 64px;
+    color: white;
+}
+#soft-skills > p {
+    padding-top: 12px;
+    color: white;
+    
+}
+#soft-skills > ul {
+    text-align: justify;
+    padding-top: 24px;
+    padding-left: 64px;
+    color: white;
+}
 /* PORTFOLIO */
 
 #portfolio {
@@ -164,4 +225,9 @@ footer {
 .email {
     width: 40px;
     padding-bottom: 4px;
+}
+
+.soft-img {
+    width: 120px;
+    padding-top: 48px;
 }
