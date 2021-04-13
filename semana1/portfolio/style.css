@@ -4,7 +4,6 @@
     font-family:'Open Sans', 'Helvetica Neue', sans-serif;
 }
 main {
-    border: 3px solid purple;
     /* display: flex;
     flex-grow: 1; */
 }
@@ -184,7 +183,6 @@ nav > h2 {
 /* PORTFOLIO */
 
 #portfolio {
-    border: 20px solid black;
     height: 200px;
 }
 
