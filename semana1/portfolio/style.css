@@ -7,7 +7,7 @@ main {
     /* display: flex;
     flex-grow: 1; */
 }
-/* NAVEGAÇÃO */
+/* NAVEGAÇÃO E BOTÕES*/
 nav {
     display: flex;
     justify-content: flex-end;
@@ -35,6 +35,10 @@ nav > h2 {
     display: flex;
     align-items: center;
     text-align: center;
+}
+
+.btt-portfolio {
+    width: 147px;
 }
 
 /* INICIO */
@@ -184,7 +188,18 @@ nav > h2 {
 /* PORTFOLIO */
 
 #portfolio {
-    height: 200px;
+    /* height: 400px; */
+    text-indent: 80px;
+    padding-top: 24px;
+    padding-bottom: 100px;
+    color: #3F7EE5;
+}
+#projetos {
+    display: grid;
+    grid-template-rows: 1 fr;
+    padding-top: 54px;
+    margin-bottom: 54px;
+    
 }
 
 /* FOOTER */
@@ -231,4 +246,8 @@ footer {
 .soft-img {
     width: 120px;
     padding-top: 48px;
+}
+
+.motoway {
+    width: 300px;
 }
