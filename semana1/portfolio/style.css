@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Open Sans', 'Helvetica Neue', sans-serif;
+}
+main {
+    /* display: flex;
+    flex-grow: 1; */
+}
+/* NAVEGAÇÃO E BOTÕES*/
+nav {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    padding-right: 12px;
+    background-color: white;
+}
+nav > h2 {
+    padding-right: 320px;
+    padding-left: 24px;
+    display: flex;
+    align-items: center;
+    color: #3F7EE5 ;
+}
+.nav-btt {
+    margin: 16px;
+    padding-right: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #3F7EE5;
+    border: 2px solid #3F7EE5;
+    padding-left: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.btt-portfolio {
+    width: 147px;
+}
+
+/* INICIO */
+
+#inicio {
+    height: 20px;
+    background-image: url(./img/portfolio.jpg);
+    background-size: cover;
+    height: 520px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* QUEM SOU EU */
+
+#quem-sou > h3 {
+    text-align: center;
+}
+
+#quem-sou > p {
+    text-indent: 40px;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 18px;   
+}
+#quem-sou {
+     background-color: #6b6b6b;
+     color: white;
+     padding-top: 64px;
+     padding-bottom: 64px;
+}
+
+/* EXPERIÊNCIAS */
+
+#experiencias {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+#graduacao{
+    width: 35%;
+    color: #3F7EE5;
+    font-size: 18px;
+    border: 3px solid  #3F7EE5;
+    border-radius: 24px;
+    padding-bottom: 18px;
+}
+#graduacao > p {
+    padding-top: 12px;
+}
+#graduacao > ul {
+    text-align: justify;
+    padding-top: 24px;
+    padding-left: 64px;
+    padding-bottom: 48px;
+
+}
+#empregos {
+    background-color: white;
+    width: 35%;
+    font-size: 18px;
+    color: #3F7EE5;
+    border: 3px solid #3F7EE5;
+    border-radius: 24px;
+    padding-bottom: 18px;
+}
+#empregos > ul {
+    text-align: justify;
+    padding-top: 24px;
+    padding-left: 80px;
+}
+
+/* HABILIDADES */
+
+#habilidades {
+    background-color: #6b6b6b;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 18px;
+    
+}
+
+#front-end {
+    border: 3px solid white;
+    width: 25%;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    border-radius: 24px;
+}
+
+#back-end {
+    border: 3px solid white;
+    width: 25%;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    border-radius: 24px;
+}
+
+#soft-skills {
+    border: 3px solid white;
+    width: 25%;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    border-radius: 24px;
+}
+#front-end > p {
+    text-align: center;
+    padding-top: 12px;
+    color: white;
+}
+#front-end > ul {
+    text-align: justify;
+    padding-top: 24px;
+    padding-left: 64px;
+    padding-bottom: 40px;
+    color: white;    
+}
+#back-end > p {
+    padding-top: 12px;
+    color: white;
+    
+}
+#back-end > ul {
+    text-align: justify;
+    padding-top: 24px;
+    padding-left: 64px;
+    color: white;
+}
+#soft-skills > p {
+    padding-top: 12px;
+    color: white;
+    
+}
+#soft-skills > ul {
+    text-align: justify;
+    padding-top: 24px;
+    padding-left: 64px;
+    color: white;
+}
+/* PORTFOLIO */
+
+#portfolio {
+    /* height: 400px; */
+    text-indent: 80px;
+    padding-top: 24px;
+    padding-bottom: 100px;
+    color: #3F7EE5;
+}
+#projetos {
+    display: grid;
+    grid-template-rows: 1 fr;
+    padding-top: 54px;
+    margin-bottom: 54px;
+    
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    background-image: url(./img/fundo-azul-degrade\ .jpg);
+    background-size: cover;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+/* IMAGENS */
+
+.img-grad {
+    width: 64px;
+    padding-top: 24px;
+}
+.img-job {
+    width: 72px;
+    padding-top: 24px;
+}
+.linkedin {
+    width: 52px;
+    margin-right: 20px;
+}
+.git {
+    width: 40px;
+    padding-bottom: 5px;
+    margin-right: 20px;
+}
+
+.inst {
+    width: 70px;
+    margin-right: 20px;
+}
+.email {
+    width: 40px;
+    padding-bottom: 4px;
+}
+
+.soft-img {
+    width: 120px;
+    padding-top: 48px;
+}
+
+.motoway {
+    width: 300px;
+}
