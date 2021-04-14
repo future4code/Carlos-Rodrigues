@@ -28,8 +28,6 @@ header {
     border-radius: 3px;
 }
 
-/* BODY */
-
 body {
     height: 100vh;
     display: grid;
@@ -37,33 +35,19 @@ body {
 }
 
 main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 24px;
-    row-gap: 32px;
-    padding-top: 32px;
-    align-items: center;
-}
-
-.video {
     display: flex;
-    flex-direction:  column;
-    justify-content: space-between;
-    align-items: center;  
-}
-
-.video-img {
-    width: 200px;
+    align-items: center;
+    justify-content: center;
 }
 
 footer {
-    background-color: #45525B;
+    background-color:#45525B;
     color: white;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-
-
+.player-video {
+    width: 500px;
+}
