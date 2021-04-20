@@ -43,3 +43,106 @@
 
 // O resto da divisão de um número par por 2 vai ser sempre 0, caso seja colocado um número ímpar
 //inteiro, o resto será 1.
+
+
+//3)
+
+// let listaDeTarefas = [" "]
+// listaDeTarefas[0] = prompt("Digite a 1ª tarefa: ")
+// listaDeTarefas[1] = prompt("Digite a 2ª tarefa: ")
+// listaDeTarefas[2] = prompt("Digite a 3ª tarefa: ")
+
+// console.log(`${listaDeTarefas}`)
+
+// let indice
+// indice = prompt("Digite o índice da tarefa concluída: ")
+// listaDeTarefas.splice(indice,1)
+
+// console.log(`${listaDeTarefas}`)
+
+
+//4)
+
+// const nomeDoUsuario = prompt("Qual seu nome?")
+// const emailDoUsuario = prompt("Qual seu e-mail?")
+
+// console.log(`O e-mail ${emailDoUsuario} foi cadastrado com sucesso. Seja bem-vinda(o), ${nomeDoUsuario}.`)
+
+
+//DESAFIOS
+
+//1)
+
+// let kelvin
+// let celsius
+// let fahrenheit
+
+// fahrenheit = Number(prompt("Digite a temperatura em graus Fahrenheit: "))
+
+// kelvin = (fahrenheit - 32)*(5/9) + 273.15
+// console.log(`A temperatura em kelvin é ${kelvin} K`)
+
+// celsius = Number(prompt("Digite a temperatura em graus Celsius: "))
+// fahrenheit = (celsius)*(9/5) + 32
+// console.log(`A temperatura em Fahrenheit é: ${fahrenheit}`)
+
+
+//2)
+
+// let quilowatt, preço
+
+// quilowatt = Number(prompt("Consumo do mês em KwH: "))
+
+// preço = quilowatt*0.05
+// console.log(`O valor a ser pago é ${preço} reais.`)
+
+
+//CONSIDERANDO O DESCONTO
+
+// let quilowatt, preço, desconto
+
+// quilowatt = Number(prompt("Consumo do mês em KwH: "))
+// desconto = Number(prompt("Digite o valor inteiro da porcentagem de desconto, sem unidade: "))
+
+// preço = (quilowatt*0.05)*((100-desconto)/100)
+// console.log(`O valor a ser pago é ${preço} reais.`)
+
+
+//3)
+
+// let libra
+// libra = 0.45359
+
+// console.log(`20lb equivalem ${20*libra} kg`)
+
+
+// let oz
+// oz = 0.0283495
+
+// console.log(`10.5oz equivalem ${10.5*oz} kg`)
+
+
+// let milha
+// milha = 1609.34
+
+// console.log(`100mi equivalem ${100*milha} m`)
+
+
+// let gal
+// gal = 3.78541
+
+// console.log(`103.56gal equivalem ${103.56*gal} L`)
+
+
+// let xic
+// xic = 1*(6/25)
+
+// console.log(`450xic equivalem ${450*xic} L`)
+
+
+// let milha, metro
+// milha = Number(prompt("Digite o valor em milhas: "))
+// metro = milha*1609.34
+// console.log(`O valor em metros equivalente é: ${metro} m`)
+
+
