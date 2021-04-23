@@ -8,7 +8,15 @@
 //10.
 
 //2)a) 19, 21, 23, 25, 27, 30
-//b) Não consegui pensar um jeito de fazer o "for of" sozinho imprimir apenas o índice
+//b) 
+
+// let index = 0
+// const lista = [10, 11, 12, 15, 18, 19, 21, 23, 25, 27, 30]
+// for (let numero of lista) {
+//     console.log(index)
+//     index++
+  
+// }
 
 
 //DESAFIO 
@@ -25,7 +33,7 @@
 
 //3)
 
-const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 
 //a)
 // for (const numero of arrayOriginal) {
@@ -48,10 +56,21 @@ const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 // console.log(arrayNovo)
 
 //d)
-for (let index = 0; index < arrayOriginal.length; index++) {
-    for (const numero of arrayOriginal) {
-        console.log(`O elemento do índex ${index} é: ${numero}`)    
-    }    
-}
+// let index = 0
+// for (const numero of arrayOriginal) {
+//     console.log(`O elemento do índex ${index} é: ${numero}`)
+//     index++
+// }    
+
+//e)
+// let maiorValor = 0
+// for (const numero of arrayOriginal) {
+//     if (maiorValor < numero) {
+//         maiorValor = numero
+//     }
+// }
+
+// console.log(maiorValor)
+
 
 
