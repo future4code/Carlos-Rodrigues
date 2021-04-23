@@ -131,7 +131,6 @@ else if (tpJogo === "DO"){
 }
 
 
-
 if (etapaJogo === "SF") {
     console.log(`Etapa do jogo: Semi-final`)
 }
@@ -147,188 +146,250 @@ console.log(`Quantidade de ingressos: ${qtdIngressos} ingressos`)
 
 console.log(`---Valores---`)
 
-
 if (tpJogo === "IN") {
     switch (etapaJogo) {
-        case 'SF':
+        case "SF":
             switch (categoria) {
-                case '1':
-                     preco1 = 1320/4.1
-                     total1 = qtdIngressos*preco1
+                case 1:
+                    preco1 = 1320/4.1
+                    total1 = qtdIngressos*preco1
                     console.log(`Valor do ingresso: U$: ${preco1}`)
                     console.log(`Valor total: U$: ${total1}`)
-                    break
-                case '2':
-                     preco2 = 880/4.1
-                     total2 = qtdIngressos*preco2
+                    break;
+                case 2:
+                    preco2 = 880/4.1
+                    total2 = qtdIngressos*preco2
                     console.log(`Valor do ingresso: U$: ${preco2}`)
                     console.log(`Valor total: U$: ${total2}`)
-                    break
-                case '3':
-                     preco3 = 550/4.1
-                     total3 = qtdIngressos*preco3
+                    break;
+                case 3:
+                    preco3 = 550/4.1
+                    total3 = qtdIngressos*preco3
                     console.log(`Valor do ingresso: U$: ${preco3}`)
                     console.log(`Valor total: U$: ${total3}`)
-                    break
-                case '4':
-                     preco4 = 220/4.1
-                     total4 = qtdIngressos*preco4
+                    break;
+                case 4:
+                    preco4 = 220/4.1
+                    total4 = qtdIngressos*preco4
                     console.log(`Valor do ingresso: U$: ${preco4}`)
                     console.log(`Valor total: U$: ${total4}`)
-                    break
+                    break;
             }
-            break     
-        case 'DT':
+            break;     
+        case "DT":
             switch (categoria) {
-                case '1':
-                     preco1 = 1320/4.1
-                     total1 = qtdIngressos*preco1
+                case 1:
+                    preco1 = 660/4.1
+                    total1 = qtdIngressos*preco1
                     console.log(`Valor do ingresso: U$: ${preco1}`)
                     console.log(`Valor total: U$: ${total1}`)
-                    break
-                case '2':
-                     preco2 = 880/4.1
-                     total2 = qtdIngressos*preco2
+                    break;
+                case 2:
+                    preco2 = 440/4.1
+                    total2 = qtdIngressos*preco2
                     console.log(`Valor do ingresso: U$: ${preco2}`)
                     console.log(`Valor total: U$: ${total2}`)
-                    break
-                case '3':
-                     preco3 = 550/4.1
-                     total3 = qtdIngressos*preco3
+                    break;
+                case 3:
+                    preco3 = 330/4.1
+                    total3 = qtdIngressos*preco3
                     console.log(`Valor do ingresso: U$: ${preco3}`)
                     console.log(`Valor total: U$: ${total3}`)
-                    break
-                case '4':
-                     preco4 = 220/4.1
-                     total4 = qtdIngressos*preco4
+                    break;
+                case 4:
+                    preco4 = 170/4.1
+                    total4 = qtdIngressos*preco4
                     console.log(`Valor do ingresso: U$: ${preco4}`)
                     console.log(`Valor total: U$: ${total4}`)
-                    break
+                    break;
             }
-            break
-        case 'FI':
+            break;
+        case "FI":
             switch (categoria) {
-                case '1':
-                     preco1 = 1320/4.1
-                     total1 = qtdIngressos*preco1
+                case 1:
+                    preco1 = 1980/4.1
+                    total1 = qtdIngressos*preco1
                     console.log(`Valor do ingresso: U$: ${preco1}`)
                     console.log(`Valor total: U$: ${total1}`)
-                    break
-                case '2':
-                     preco2 = 880/4.1
-                     total2 = qtdIngressos*preco2
+                    break;
+                case 2:
+                    preco2 = 1320/4.1
+                    total2 = qtdIngressos*preco2
                     console.log(`Valor do ingresso: U$: ${preco2}`)
                     console.log(`Valor total: U$: ${total2}`)
-                    break
-                case '3':
-                     preco3 = 550/4.1
-                     total3 = qtdIngressos*preco3
+                    break;
+                case 3:
+                    preco3 = 880/4.1
+                    total3 = qtdIngressos*preco3
                     console.log(`Valor do ingresso: U$: ${preco3}`)
                     console.log(`Valor total: U$: ${total3}`)
-                    break
-                case '4':
-                     preco4 = 220/4.1
-                     total4 = qtdIngressos*preco4
+                    break;
+                case 4:
+                    preco4 = 330/4.1
+                    total4 = qtdIngressos*preco4
                     console.log(`Valor do ingresso: U$: ${preco4}`)
                     console.log(`Valor total: U$: ${total4}`)
-                    break
+                    break;
             }
-            break
+            break;
     }
 } 
 
 else if (tpJogo === "DO") {
     switch (etapaJogo) {
-        case 'SF':
+        case "SF":
             switch (categoria) {
-                case '1':
-                     preco1 = 1320
-                     total1 = qtdIngressos*preco1
+                case 1:
+                    preco1 = 1320
+                    total1 = qtdIngressos*preco1
                     console.log(`Valor do ingresso: R$: ${preco1}`)
                     console.log(`Valor total: R$: ${total1}`)
-                    break
-                case '2':
-                     preco2 = 880
-                     total2 = qtdIngressos*preco2
+                    break;
+                case 2:
+                    preco2 = 880
+                    total2 = qtdIngressos*preco2
                     console.log(`Valor do ingresso: R$: ${preco2}`)
                     console.log(`Valor total: R$: ${total2}`)
-                    break
-                case '3':
-                     preco3 = 550
-                     total3 = qtdIngressos*preco3
+                    break;
+                case 3:
+                    preco3 = 550
+                    total3 = qtdIngressos*preco3
                     console.log(`Valor do ingresso: R$: ${preco3}`)
                     console.log(`Valor total: R$: ${total3}`)
-                    break
-                case '4':
-                     preco4 = 220
-                     total4 = qtdIngressos*preco4
+                    break;
+                case 4:
+                    preco4 = 220
+                    total4 = qtdIngressos*preco4
                     console.log(`Valor do ingresso: R$: ${preco4}`)
                     console.log(`Valor total: R$: ${total4}`)
-                    break
+                    break;
             }
-            break
+            break;
             
-        case 'DT':
+        case "DT":
             switch (categoria) {
-                case '1':
-                     preco1 = 1320
-                     total1 = qtdIngressos*preco1
+                case 1:
+                    preco1 = 660
+                    total1 = qtdIngressos*preco1
                     console.log(`Valor do ingresso: R$: ${preco1}`)
                     console.log(`Valor total: R$: ${total1}`)
-                    break
-                case '2':
-                     preco2 = 880
-                     total2 = qtdIngressos*preco2
+                    break;
+                case 2:
+                    preco2 = 440
+                    total2 = qtdIngressos*preco2
                     console.log(`Valor do ingresso: R$: ${preco2}`)
                     console.log(`Valor total: R$: ${total2}`)
-                    break
-                case '3':
-                     preco3 = 550
-                     total3 = qtdIngressos*preco3
+                    break;
+                case 3:
+                    preco3 = 330
+                    total3 = qtdIngressos*preco3
                     console.log(`Valor do ingresso: R$: ${preco3}`)
                     console.log(`Valor total: R$: ${total3}`)
-                    break
-                case '4':
-                     preco4 = 220
-                     total4 = qtdIngressos*preco4
+                    break;
+                case 4:
+                    preco4 = 170
+                    total4 = qtdIngressos*preco4
                     console.log(`Valor do ingresso: R$: ${preco4}`)
                     console.log(`Valor total: R$: ${total4}`)
-                    break
+                    break;
             }
-            break
-        case 'FI':
+            break;
+        case "FI":
             switch (categoria) {
-                case '1':
-                     preco1 = 1320
-                     total1 = qtdIngressos*preco1
+                case 1:
+                    preco1 = 1980
+                    total1 = qtdIngressos*preco1
                     console.log(`Valor do ingresso: R$: ${preco1}`)
                     console.log(`Valor total: R$: ${total1}`)
-                    break
-                case '2':
-                     preco2 = 880
-                     total2 = qtdIngressos*preco2
+                    break;
+                case 2:
+                    preco2 = 1320
+                    total2 = qtdIngressos*preco2
                     console.log(`Valor do ingresso: R$: ${preco2}`)
                     console.log(`Valor total: R$: ${total2}`)
-                    break
-                case '3':
-                     preco3 = 550
-                     total3 = qtdIngressos*preco3
+                    break;
+                case 3:
+                    preco3 = 880
+                    total3 = qtdIngressos*preco3
                     console.log(`Valor do ingresso: R$: ${preco3}`)
                     console.log(`Valor total: R$: ${total3}`)
-                    break
-                case '4':
-                     preco4 = 220
-                     total4 = qtdIngressos*preco4
+                    break;
+                case 4:
+                    preco4 = 330
+                    total4 = qtdIngressos*preco4
                     console.log(`Valor do ingresso: R$: ${preco4}`)
                     console.log(`Valor total: R$: ${total4}`)
-                    break
+                    break;
             }
-            break
+            break;
     }
 }
 
-// else {
-//     console.log("ERRO DESCONHECIDO, DESISTO.")
-// }
+
+
+else {
+    console.log("ERRO DESCONHECIDO, DESISTO.")
+}
+
+
+// if (tpJogo === "IN" && etapaJogo === "SF") {
+    //             switch (categoria) {
+    //                 case 1:
+    //                     preco1 = 1320/4.1
+    //                     total1 = qtdIngressos*preco1
+    //                     console.log(`Valor do ingresso: U$: ${preco1}`)
+    //                     console.log(`Valor total: U$: ${total1}`)
+    //                     break;
+    //                 case 2:
+    //                     preco2 = 880/4.1
+    //                     total2 = qtdIngressos*preco2
+    //                     console.log(`Valor do ingresso: U$: ${preco2}`)
+    //                     console.log(`Valor total: U$: ${total2}`)
+    //                     break;
+    //                 case 3:
+    //                     preco3 = 550/4.1
+    //                     total3 = qtdIngressos*preco3
+    //                     console.log(`Valor do ingresso: U$: ${preco3}`)
+    //                     console.log(`Valor total: U$: ${total3}`)
+    //                     break;
+    //                 case 4:
+    //                     preco4 = 220/4.1
+    //                     total4 = qtdIngressos*preco4
+    //                     console.log(`Valor do ingresso: U$: ${preco4}`)
+    //                     console.log(`Valor total: U$: ${total4}`)
+    //                     break;
+    //             }
+    // }
+    
+    // else if (tpJogo ==="IN" && etapaJogo === "DT") {
+    //             switch (categoria) {
+    //                 case 1:
+    //                     preco1 = 660/4.1
+    //                     total1 = qtdIngressos*preco1
+    //                     console.log(`Valor do ingresso: U$: ${preco1}`)
+    //                     console.log(`Valor total: U$: ${total1}`)
+    //                     console.log("eu entro aqui")
+    //                     break;
+    //                 case 2:
+    //                     preco2 = 440/4.1
+    //                     total2 = qtdIngressos*preco2
+    //                     console.log(`Valor do ingresso: U$: ${preco2}`)
+    //                     console.log(`Valor total: U$: ${total2}`)
+    //                     break;
+    //                 case 3:
+    //                     preco3 = 330/4.1
+    //                     total3 = qtdIngressos*preco3
+    //                     console.log(`Valor do ingresso: U$: ${preco3}`)
+    //                     console.log(`Valor total: U$: ${total3}`)
+    //                     break;
+    //                 case 4:
+    //                     preco4 = 170/4.1
+    //                     total4 = qtdIngressos*preco4
+    //                     console.log(`Valor do ingresso: U$: ${preco4}`)
+    //                     console.log(`Valor total: U$: ${total4}`)
+    //                     break;
+    //             }            
+    // }
+
 
 
