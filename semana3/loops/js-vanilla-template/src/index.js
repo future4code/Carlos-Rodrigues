@@ -64,13 +64,19 @@
 
 //e)
 // let maiorValor = 0
+// let menorValor = Infinity
+
 // for (const numero of arrayOriginal) {
 //     if (maiorValor < numero) {
 //         maiorValor = numero
 //     }
+//     else if (numero < menorValor) {
+//         menorValor = numero
+//     }
 // }
 
-// console.log(maiorValor)
+// console.log(`Maior valor: ${maiorValor}`)
+// console.log(`Menor valor: ${menorValor}`)
 
 
 
