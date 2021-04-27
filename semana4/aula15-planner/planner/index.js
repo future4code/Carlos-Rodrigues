@@ -42,11 +42,28 @@ function adicionarTarefa() {
 }
 
 function riscar(elemento) {
-        elemento.style.textDecoration = 'line-through'
+    elemento.style.textDecoration = 'line-through'
 }
 
-function apagarTarefas() {
+function apagarTarefa() {
 
-    
+const apagar1 = document.getElementById("segunda")
+const apagar2 = document.getElementById("terca")
+const apagar3 = document.getElementById("quarta")
+const apagar4 = document.getElementById("quinta")
+const apagar5 = document.getElementById("sexta")
+const apagar6 = document.getElementById("sabado")
+const apagar7 = document.getElementById("domingo")
+
+apagar1.innerHTML = ""
+apagar2.innerHTML = ""
+apagar3.innerHTML = ""
+apagar4.innerHTML = ""
+apagar5.innerHTML = ""
+apagar6.innerHTML = ""
+apagar7.innerHTML = ""
+
+// const apagar = document.getElementsByClassName("dia")
+// apagar.innerHTML = "" (Pq não funciona?)
+
 }
-
