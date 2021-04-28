@@ -4,7 +4,7 @@ function criarPost() {
     const tituloPost = document.getElementById('titulo-post')
     const autorPost = document.getElementById('autor-post')
     const conteudoPost = document.getElementById('conteudo-post')
-    const containerPost = document.getElementById('container-de-posts')
+    const containerPost = document.getElementById('post-completo')
 
     if (tituloPost.value =="" || autorPost.value == "" || conteudoPost.value == "") {
         alert("Campo em branco, preencha todos os campos para enviar o post!")        
