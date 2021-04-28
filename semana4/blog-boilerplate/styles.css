@@ -14,6 +14,22 @@
     align-items: center;
 }
 
+#img{
+    border: 1px dotted black;
+    padding: 10px;
+    width: 70vw;
+    margin: 10px auto;
+}
+
+#texto {
+    width: 50vw;
+}
+
+#add{
+    height: fit-content;
+    width: fit-content;
+}
+
 form {
     display: flex;
     flex-wrap: wrap;

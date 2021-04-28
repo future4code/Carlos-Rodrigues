@@ -30,9 +30,35 @@ function criarPost() {
         tituloPost.value = ""
         autorPost.value = ""
         conteudoPost.value = ""
-    }   
-    
-
+    }       
 }
 
+function addImagemClique() {
+    const texto = document.getElementById("texto")
+    const imagens = document.getElementById("addImagens")
+
+    if (texto.value.includes(".jpg") || texto.value.includes(".png")) {
+        imagens.innerHTML += `<img src="${texto.value}">`
+        texto.value = ""    
+    }
+    else {
+        alert("URL inválida, insira um link terminado em jpg ou png")
+        texto.value = ""
+    }   
+}
+
+function addImagemEnter(event) {
+    if (event.key === "Enter") {
+      const texto = document.getElementById("texto")
+      const imagens = document.getElementById("addImagens")
+  
+      if (texto.value.includes(".jpg") || texto.value.includes(".png")) {
+        imagens.innerHTML += `<img src="${texto.value}">`
+        texto.value = ""
+      } else {
+        alert("URL inválida, por favor informe um link que termine em jpg ou png")
+        texto.value = ""
+      }
+    }
+  }
 

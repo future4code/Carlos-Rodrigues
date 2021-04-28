@@ -22,12 +22,18 @@
         <button onclick="criarPost()">Criar Post</button>
     </section>
 
+    <section id="img" >
+        <label for="imagem">Imagem</label>
+        <input type="text" id="texto" onkeydown="addImagemEnter(event)" >
+        <button id="add" onclick="addImagemClique()">Adicionar Imagem</button>
+    </section>
+    
     <section id="container-de-posts">
         <h2>Posts criados</h2>
-        <h3 id="tituloAdd"></h3>
-        <p id="autorAdd"></p>
-        <p id="conteudoAdd"></p>
-        
     </section>
+
+    <div id="addImagens">
+        <h2>Imagens</h2>
+    </div>
 </body>
 </html>
