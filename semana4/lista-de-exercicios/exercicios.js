@@ -1,11 +1,11 @@
 //Exercício 1
 
 function inverteArray(array) {
-   // let arrayInvertido = []
-   // for (let i = array.length -1 ; i >= 0; i--) {
-   //    arrayInvertido.push(array[i])
-   // }
-   // return arrayInvertido
+   let arrayInvertido = []
+   for (let i = array.length -1 ; i >= 0; i--) {
+      arrayInvertido.push(array[i])
+   }
+   return arrayInvertido
 } 
 
 //Exercício 2
@@ -13,60 +13,76 @@ function inverteArray(array) {
 function retornaNumerosParesElevadosADois (array) {
    let novoArray = []
    
-   // for (const numero of array) {
-   //    if (numero % 2 === 0) {
-   //       novoArray.push(numero*numero)   
-   //    }
-   // }
-   // return novoArray
+   for (const numero of array) {
+      if (numero % 2 === 0) {
+         novoArray.push(numero*numero)   
+      }
+   }
+   return novoArray
 }
 
 //Exercício 3
 
 function retornaNumerosPares (array) {
-   // let arrayPares = []
-   // for (const numeros of array) {
-   //    if (numeros % 2  === 0) {
-   //       arrayPares.push(numeros)   
-   //    }  
-   // }
-   // return arrayPares
+   let arrayPares = []
+   for (const numeros of array) {
+      if (numeros % 2  === 0) {
+         arrayPares.push(numeros)   
+      }  
+   }
+   return arrayPares
 }
 
 //Exercício 4
 
 function retornaMaiorNumero(array) {
-   // let maior = 0
-   // for (const numero of array) {
-   //    if (numero > maior) {
-   //       maior = numero    
-   //    }
-   // }
-   // return maior
+  let maior = 0
+   for (const numero of array) {
+      if (numero > maior) {
+         maior = numero    
+      }
+   }
+   return maior 
 }
 
 //Exercício 5
 
 function retornaQuantidadeElementos (array) {
-   // implemente sua lógica aqui
+   let contador = array.length
+   return contador
 }
 
 //Exercício 6
 
 function retornaExpressoesBooleanas() {
-   // implemente sua lógica aqui
+   const respostas = [false, false, true, true, true]
+   return respostas
 }
 
 //Exercício 7
 
 function retornaNNumerosPares(n) {
-   // implemente sua lógica aqui
+   
+   let novoArray = []
+   for (let i = 0; i < n; i++) {
+      novoArray.push(2*i)   
+   }
+   return novoArray 
 }
 
 // Exercício 8
 
 function checaTriangulo(a, b, c) {
-  // implemente sua lógica aqui
+   let triangulo = ''
+
+  if (a === b && b === c) {
+     triangulo = 'Equilátero'    
+  } else if (a === b && a !== c || a === c && b !== a) {
+     triangulo = 'Isósceles'  
+  } else if (a !== b && b !== c) {
+     triangulo ='Escaleno'    
+  }
+  return triangulo
 }
 
 // Exercício 9
