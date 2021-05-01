@@ -191,7 +191,14 @@ return dadosDoFilme
 // Exercício 13
 
 function imprimeChamada() {
-   // implemente sua lógica aqui
+
+   const dadosDoFilme = {
+      nome: 'O Diabo Veste Prada',
+      ano: 2006,
+      diretor: 'David Frankel',
+      atores: ['Meryl Streep', ' Anne Hathaway', ' Emily Blunt', ' Stanley Tucci']   
+    }
+   return`Venha assistir ao filme ${dadosDoFilme.nome}, de ${dadosDoFilme.ano}, dirigido por ${dadosDoFilme.diretor} e estrelado por ${dadosDoFilme.atores}.`
 }
 
 // Exercício 14
