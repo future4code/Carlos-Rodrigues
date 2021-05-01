@@ -88,19 +88,80 @@ function checaTriangulo(a, b, c) {
 // Exercício 9
 
 function comparaDoisNumeros(num1, num2) {
-   // implemente sua lógica aqui
+   let maior 
+   let menor
+   let divisivel
+   let maiorMenosMenor
+
+   if (num1 > num2) {
+      maior = num1  
+      menor = num2 
+      maiorMenosMenor = num1 - num2
+   }
+   else if (num1 < num2) {
+      maior = num2  
+      menor = num1
+      maiorMenosMenor = num2 - num1
+   }
+   else {
+      console.log("Os números são iguais")
+   }
+   
+
+   if (maior % menor === 0) {
+      divisivel = true    
+   }
+   else {
+      divisivel = false
+   }
+   
+   comparador = {
+      maiorNumero: maior,
+      maiorDivisivelporMenor: divisivel,
+      diferenca: maiorMenosMenor
+   }
+  return comparador
 }
 
 // Exercício 10
 
 function segundoMaiorEMenor(array) {
-   // implemente sua lógica aqui
+   let maior = 0
+   let segundoMaior = 0
+   let menor = Infinity
+   let segundoMenor = Infinity
+   let arrayNumeros = []
+   
+   for (const numero of array) {
+      if (numero > maior) {
+         maior = numero   
+      }
+   }
+   for (const numero of array) {
+      if (numero > segundoMaior && numero < maior) {
+         segundoMaior = numero   
+      }  
+   }
+   arrayNumeros.push(segundoMaior)
+
+   for (const numero of array) {
+      if (numero < menor) {
+         menor = numero   
+      }
+   }
+   for (const numero of array) {
+      if (numero < segundoMenor && numero > menor) {
+         segundoMenor = numero   
+      }  
+   }
+   arrayNumeros.push(segundoMenor)
+   return arrayNumeros  
 }
 
 //Exercício 11
 
 function ordenaArray(array) {
-   // implemente sua lógica aqui
+   
 }
 
 // Exercício 12
