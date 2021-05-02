@@ -412,7 +412,5 @@ function atualizaSaldo() {
        })
       conta.saldoTotal -= totalCompras
    })
-
-  console.log(contas)
   return contas
 }
