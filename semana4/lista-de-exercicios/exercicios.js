@@ -216,7 +216,10 @@ function criaRetangulo(lado1, lado2) {
 // Exercício 15
 
 function anonimizaPessoa(pessoa) {
-   // implemente sua lógica aqui
+   return {
+      ...pessoa,
+      nome: 'ANÔNIMO'
+   }
 }
 
 // Exercício 16
@@ -231,31 +234,64 @@ const arrayDePessoas = [
 // Exercício 16, letra A
 
 function maioresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+
+   const adultos = arrayDePessoas.filter((pessoa) => {
+      if (pessoa.idade >= 20) {
+         return true
+      }
+      return false
+   })
+   return adultos
 }
 
 // Exercício 16, letra B
 
 function menoresDe18(arrayDePessoas) {
-   // implemente sua lógica aqui
+   
+   const criancas = arrayDePessoas.filter((pessoa) => {
+      if (pessoa.idade < 20) {
+         return true
+      }
+      return false
+   })
+   return criancas
 }
 
 // Exercício 17, letra A
 
 function multiplicaArrayPor2(array) {
-   // implemente sua lógica aqui
+   const arrayMultiplicado = []
+   array.forEach((numero) => {
+      arrayMultiplicado.push(numero*2)
+   })
+   return arrayMultiplicado
 }
 
 // Exercício 17, letra B
 
 function multiplicaArrayPor2S(array) {
-  // implemente sua lógica aqui
+   const arrayMultiplicado = []
+
+   array.forEach((numero) => {
+      arrayMultiplicado.push(`${numero*2}`)
+   })
+   return arrayMultiplicado  
 }
+
 
 // Exercício 17, letra C
 
 function verificaParidade(array) {
-   // implemente sua lógica aqui
+   const arrayParidade = []
+   array.forEach((numero) => {
+      if (numero % 2 === 0) {
+         arrayParidade.push(`${numero} é par`)
+      }
+      else {
+         arrayParidade.push(`${numero} é ímpar`)
+      }
+   })
+   return arrayParidade
 }
 
 // Exercício 18
@@ -272,14 +308,26 @@ const pessoas = [
 //Exercício 18, letra A
 
 function retornaPessoasAutorizadas() {
-   // implemente sua lógica aqui
+   const pessoaAutorizada = pessoas.filter((pessoa) => {
+      if (pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60 ) {
+         return true
+      }
+      return false
+   })
+   return pessoaAutorizada
 }
 
 
 // Exercício 18, letra B
 
 function retornaPessoasNaoAutorizadas() {
-   // implemente sua lógica aqui
+   const pessoaNaoAutorizada = pessoas.filter((pessoa) => {
+      if (pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60 ) {
+         return false
+      }
+      return true
+   })
+   return pessoaNaoAutorizada
 }
 
 //Exercício 19
@@ -294,8 +342,18 @@ const consultasNome = [
  //Exercício 19, letra A
  
  function ordenaPorNome() {
+   for(let i = 0; i < consultasNome.length; i++) {
+      for(let j = 0; j < consultasNome.length - i - 1; j++) {
+        if(consultasNome[j].nome > consultasNome[j + 1].nome) {
+          const temp = consultasNome[j]
+          consultasNome[j] = consultasNome[j + 1]
+          consultasNome[j + 1] = temp
+        }
+      }
+   }
+   return consultasNome
+}
   
- }
  
  // Exercício 19, letra B
  
