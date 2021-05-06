@@ -11,26 +11,60 @@ const MainContainer = styled.div`
 `
 
 class App extends React.Component {
+  state = {
+    posts: [
+      {
+      nomeUsuario: "paulinha",
+      fotoUsuario: "https://picsum.photos/50/50",
+      fotoPost: "https://picsum.photos/200/150"
+      },
+
+      {
+      nomeUsuario: "zezinho",
+      fotoUsuario: "https://picsum.photos/40/40",
+      fotoPost: "https://picsum.photos/210/140"
+      },
+
+      {
+      nomeUsuario: "luizinho",
+      fotoUsuario: "https://picsum.photos/30/30",
+      fotoPost: "https://picsum.photos/200/140"
+      }
+    ],
+    
+    valorNomeUsuario: "",
+    valorFotoUsuario: "",
+    valorFotoPost: ""
+  };
   render() {
-    return (
-      <MainContainer>
+    const feed = this.state.posts.map((post) => {
+      return (
         <Post
-          nomeUsuario={'paulinha'}
-          fotoUsuario={'https://picsum.photos/50/50'}
-          fotoPost={'https://picsum.photos/200/150'}
-        />
-        <Post 
-          nomeUsuario = {'zezinho'}
-          fotoUsuario = {'https://picsum.photos/40/40'}
-          fotoPost = {'https://picsum.photos/210/140'}
+          nomeUsuario = {post.nomeUsuario}
+          fotoUsuario = {post.fotoUsuario}
+          fotoPost = {post.fotoPost}
+          />  
+      );
+    })
+    return (
+      <div>
+        <div>
+          <input value = {this.state.valorNomeUsuario}
           />
-          <Post
-            nomeUsuario = {'luizinho'}
-            fotoUsuario = {'https://picsum.photos/30/30'}
-            fotoPost = {'https://picsum.photos/200/140'}
+          <input value = {this.state.valorFotoUsuario}
           />
+          <input value = {this.state.FotoPost}
+          />
+        </div>
+      
+
+      <MainContainer>
+        {feed}
       </MainContainer>
-    );
+      </div>
+      
+      
+    )
   }
 }
 
