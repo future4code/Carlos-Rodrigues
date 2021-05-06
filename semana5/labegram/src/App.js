@@ -53,7 +53,7 @@ class App extends React.Component {
           />
           <input value = {this.state.valorFotoUsuario}
           />
-          <input value = {this.state.FotoPost}
+          <input value = {this.state.valorFotoPost}
           />
         </div>
       
