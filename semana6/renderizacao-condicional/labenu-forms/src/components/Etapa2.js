@@ -19,7 +19,9 @@ export default class Etapa2 extends React.Component {
                 <div>
                     <p>6. Qual a unidade de ensino?</p>
                     <input></input>
-                </div>                
+                </div>
+                <br/>
+                <button onClick={this.props.proximaEtapa}>Próxima etapa</button>                
             </div>            
         )
     }

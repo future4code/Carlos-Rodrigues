@@ -45,6 +45,8 @@ export default class Etapa1 extends React.Component {
                         <option value="sc">Ensino superior completo</option>
                     </select>
                 </div>
+                <br/>
+                <button onClick={this.props.proximaEtapa}>Próxima etapa</button>
             </div>
         )
     }

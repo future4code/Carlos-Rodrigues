@@ -23,7 +23,9 @@ export default class Etapa3 extends React.Component {
                         <option>Curso de inglês</option>
                         <option>Curso técnico</option>
                     </select>
-                </div>            
+                </div>
+                <br/>
+                <button onClick={this.props.proximaEtapa}>Próxima etapa</button>          
             </div>
         )
     }

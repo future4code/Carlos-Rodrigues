@@ -11,20 +11,20 @@ export default class App extends React.Component {
     etapa: 1
   };
 
-  renderizaEtapa = () => {
-    switch (this.state.etapa) {
-      case 1:
-        return <Etapa1 />
+  // renderizaEtapa = () => {
+  //   switch (this.state.etapa) {
+  //     case 1:
+  //       return <Etapa1 />
 
-      case 2:
-        return <Etapa2/>
-      case 3:
-        return <Etapa3/>
-      case 4:
-        return <EtapaFinal/>
-    }
+  //     case 2:
+  //       return <Etapa2/>
+  //     case 3:
+  //       return <Etapa3/>
+  //     case 4:
+  //       return <EtapaFinal/>
+  //   }
 
-  }
+  // }
 
   proximaEtapa = () => {
     switch (this.state.etapa) {
@@ -40,12 +40,21 @@ export default class App extends React.Component {
   }
 
   render() {
-
+    const renderizaPagina =() => {
+      if (this.state.etapa === 1) {
+        return <Etapa1 proximaEtapa={this.proximaEtapa}/>
+      } else if (this.state.etapa === 2) {
+        return <Etapa2 proximaEtapa={this.proximaEtapa}/>
+      } else if (this.state.etapa === 3) {
+        return <Etapa3 proximaEtapa={this.proximaEtapa}/>
+      } else if (this.state.etapa === 4) {
+        return <EtapaFinal proximaEtapa={this.proximaEtapa}/>
+      }
+    }
+    
     return (
       <div className="App">
-        {this.renderizaEtapa()}
-        <br/>
-        <button onClick={this.proximaEtapa}>Próxima etapa</button>
+        {renderizaPagina()}   
       </div>
 
       
