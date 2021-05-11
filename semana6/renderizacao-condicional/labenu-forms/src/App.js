@@ -11,21 +11,6 @@ export default class App extends React.Component {
     etapa: 1
   };
 
-  // renderizaEtapa = () => {
-  //   switch (this.state.etapa) {
-  //     case 1:
-  //       return <Etapa1 />
-
-  //     case 2:
-  //       return <Etapa2/>
-  //     case 3:
-  //       return <Etapa3/>
-  //     case 4:
-  //       return <EtapaFinal/>
-  //   }
-
-  // }
-
   proximaEtapa = () => {
     switch (this.state.etapa) {
       case 1:
