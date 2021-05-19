@@ -7,12 +7,15 @@ const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users
 
 export default class App extends React.Component {
   state = {
-    user: [],
+    users: [],
     inputName: "",
     inputEmail: "",
     page: ""
   }
 
+  componentDidMount() {
+    this.getUsers()
+  }
   onChangeName = (e) => {
     this.setState({inputName: e.target.value})
   }
@@ -21,15 +24,15 @@ export default class App extends React.Component {
     this.setState({inputEmail: e.target.value})
 
   }
+  
+  onClickUsersList = () => {
+    this.setState({page: "users"})
+  }
 
   onClickBack = () => {
     this.setState({page: ""})
   }
 
-  onClickUserList = () => {
-    this.setState({page: "users"})
-  }
-  
   getUsers = () => {
     const header = {
       headers: {
@@ -39,11 +42,9 @@ export default class App extends React.Component {
 
     axios.get(url, header)
     .then((res) => {
-      this.setState({user: res.data.name})
-      console.log(res.data.name)
+      this.setState({users: res.data})
     })
     .catch((err) => {
-      console.log(err)
     })
   }
 
@@ -66,11 +67,36 @@ export default class App extends React.Component {
       this.setState({inputName: ""})
     })
     .catch((err) => {
-      console.log(err)
+      alert("Não foi possível adicionar o usuário.")
     })
   }
+
+  deleteUser = (e) => {
+    const del = window.confirm("Tem certeza que deseja remover o usuário?")
+    if (del === true) {
+      const id = e.target.value
+      const header = {
+        headers: {
+          Authorization: "carlos-rodrigues-paiva"
+        }
+      }
+  
+      axios.delete(`${url}/${id}`, header)
+      .then((res) => {
+        alert("Usuário removido")
+        this.getUsers()
+      })
+      .catch((err) => {
+        alert(err)
+      })
+    }
+     else {
+       alert("Operação cancelada.")
+     } 
+    }
   
   render() {
+    
     const showPage = () => {
       if (this.state.page === "") {
         return <SignUp 
@@ -79,15 +105,18 @@ export default class App extends React.Component {
         onChangeName={this.onChangeName}
         onChangeEmail={this.onChangeEmail}
         createUsers={this.createUsers}
-        onClickUserList={this.onClickUserList}
+        onClickUsersList={this.onClickUsersList}
         />     
       } else if (this.state.page === "users") {
         return <Users
         onClickBack={this.onClickBack}
+        namesList={this.namesList}
+        users={this.state.users}
+        deleteUser={this.deleteUser}
         />      
       }
     }
-    
+
     return (
       <div>
         {showPage()}

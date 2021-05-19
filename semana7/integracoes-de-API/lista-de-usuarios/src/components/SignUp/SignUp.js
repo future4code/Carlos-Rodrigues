@@ -14,13 +14,15 @@ export default class SignUp extends React.Component {
 
                 <Inputs>
                     <label>Nome do usuário:</label>
-                    <input 
+                    <input
+                    type="text"
                     value={this.props.inputName}
                     onChange={this.props.onChangeName}
                     />
                     
                     <label>E-mail:</label>
                     <input 
+                    type="email"
                     value={this.props.inputEmail}
                     onChange={this.props.onChangeEmail}
                     />
@@ -28,7 +30,7 @@ export default class SignUp extends React.Component {
 
                     <button onClick={this.props.createUsers}>Enviar</button>
                     <br/>
-                    <button onClick={this.props.onClickUserList}>Lista de usuários</button>
+                    <button onClick={this.props.onClickUsersList}>Lista de usuários</button>
                 </Inputs>
 
             </Container>            
