@@ -1,23 +1,32 @@
 import styled from 'styled-components'
 
-export const Container = styled.div `
-    min-height: 60vh;
+export const Main = styled.div `
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 50vw;
+    justify-content: center;
+    width: 30vw;
+    height: 70vh;
     margin: auto;
-    margin-top: 25vh;
-`
-export const Title = styled.div `
-    text-align: center;
+    margin-top: 15vh;
 `
 
-export const Inputs = styled.div `
+export const Container = styled.div `
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding-left: 5vw;
+    justify-content: center;
+    margin-bottom: 10vh;
 `
+
+export const Inputs  = styled.div `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+`
+
+export const Title = styled.div `
+  margin-bottom: 10vh;
+`
+

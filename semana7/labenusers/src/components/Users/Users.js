@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Title, Home, List, Buttons } from './styled';
+import {Container, Title, Home, List, Buttons, Main } from './styled';
 
 export default class Users extends React.Component {
   
@@ -16,6 +16,7 @@ export default class Users extends React.Component {
                     </List>
           })
         return (
+            <Main>
             <Container>
                 <Title>
                     <h1>Tela de usuários</h1>
@@ -25,6 +26,7 @@ export default class Users extends React.Component {
                     <button onClick={this.props.onClickBack}>Voltar a página principal</button>
                 </Home>
             </Container>
+            </Main>
         )
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {MainContainer, UsersContainer, Buttons, Edit} from './styled'
+import {MainContainer, UsersContainer, Buttons, Edit, Inputs} from './styled'
 
 export  default class UserDetail extends React.Component {
 
@@ -7,7 +7,8 @@ export  default class UserDetail extends React.Component {
         const showPage = () => {
             if (this.props.edit === true) {
                 return <MainContainer>
-                    <h1> Detalhes do usuário</h1>
+                    <h1> Detalhes do usuário<hr color="orange"/></h1>
+                    
                     <UsersContainer>
                         <div>
                             <h3>Nome</h3>
@@ -20,11 +21,13 @@ export  default class UserDetail extends React.Component {
                         </div>
                     </UsersContainer>
 
+                    <Inputs>
                     <input placeholder="Novo nome" onChange={this.props.onChangeName} ></input>
+                    <br/>
                     <br/>
                     <input placeholder="Novo e-mail" onChange={this.props.onChangeEmail} ></input>
                      <br/>
-                     
+                    </Inputs>
                     <Edit>
                         <button value={this.props.usersDetail.id} onClick={this.props.onClickSave}>Salvar</button>
                     </Edit>   
@@ -34,7 +37,7 @@ export  default class UserDetail extends React.Component {
                 </MainContainer>     
             } else if (this.props.edit === false) {
                 return <MainContainer>
-                    <h1> Detalhes do usuário</h1>
+                    <h1> Detalhes do usuário <hr color="orange"/></h1>
                     <UsersContainer>
                         <div>
                             <h3>Nome</h3>

@@ -112,8 +112,7 @@ export default class App extends React.Component {
         Authorization: "carlos-rodrigues-paiva"
       }
     }
-
-    
+  
     axios.get(`${url}/${id}`, header)
     .then((res) => {
       this.setState({usersDetail: res.data})
@@ -151,8 +150,7 @@ export default class App extends React.Component {
       console.log(err.response)
     })
 }
-
-  
+ 
   render() {
     
     const showPage = () => {

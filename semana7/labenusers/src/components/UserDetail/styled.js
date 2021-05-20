@@ -3,26 +3,33 @@ import styled from 'styled-components';
 export const UsersContainer = styled.div `
     display: flex;
     justify-content: space-between;
-    width: 60%;
-    margin: 8vh;
+    width: 80%;
+    margin: 0;
 `
 export const Edit = styled.div `
     display: flex;
     align-items: flex-end;
+    margin-top: 5vh;
 `
 export const MainContainer = styled.div `
-    min-height: 60vh;
+    height: 70vh;
     border: 1px solid black;
+    border-radius: 10%;
+    background-color: gray;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50vw;
+    width: 30vw;
     margin: auto;
-    margin-top: 25vh;
+    margin-top: 15vh;
 `
 
 export const Buttons = styled.div ` 
     display: flex;
-    padding-top: 5vh;
-    padding-bottom: 5vh;    
+    align-items: flex-end;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+` 
+export const Inputs = styled.div `
+    margin-top: 5vh;
 `
