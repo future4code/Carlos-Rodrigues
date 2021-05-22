@@ -33,8 +33,9 @@ export const Content = styled.div `
     border: 2px solid gray;
     width: 30vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-
+    align-items: flex-start;
 `
 export const Footer = styled.div `
     border: 2px solid lightblue;

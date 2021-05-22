@@ -14,18 +14,22 @@ export default class App extends React.Component {
             <Body>
                 <Nav>
                     <input placeholder="Buscar playlist"/>
+                    <h3 onClick={this.props.onClickHome}>Início</h3>
                     <h3>Criar Playlist</h3>
-                    <h3>Suas Playlists</h3>
+                    <h3 onClick={this.props.onClickPlaylists}>Suas Playlists</h3>
                 </Nav>
                 
                 <Container>
                     <Title>
-                        Crie a sua Playlist
+                        <h2>Crie a sua Playlist</h2>
                     </Title>
                     <Content>
                         <p>Nome da Playlist:
-                            <input/>
-                            <button>Criar!</button>
+                            <input 
+                            value={this.props.playlistName}
+                            onChange={this.props.onChangePlaylistName}
+                            />
+                            <button onClick={this.props.createPlaylist}>Criar!</button>
                         </p>
                     </Content>
                 </Container>
