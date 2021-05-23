@@ -1,5 +1,6 @@
 import React from 'react';
-import {Header, Body, Nav, Container, Title, Content, Footer} from './styled'
+import {Header, Body, Nav, Container, Title, Content, Footer, NavOptions, Home, Create, Playlist, Img, HeaderTitle, Input} from './styled'
+import labefy from '../img/labefy.png'
 
 export default class App extends React.Component {
 
@@ -7,19 +8,23 @@ export default class App extends React.Component {
 
     return (
         <div>
-            <Header>
-                <h1>Header</h1>
+             <Header>
+                <Img src={labefy}/>
+                <HeaderTitle>Labefy</HeaderTitle>
             </Header>
+            <Nav>
+                <Input>
+                    <input placeholder="Buscar playlist"/>
+                </Input>
+                
+                <NavOptions>
+                    <Home>Início</Home>
+                    <Create onClick={this.props.onClickCreatePlaylist}>Criar Playlist</Create>
+                    <Playlist onClick={this.props.onClickPlaylists}>Suas Playlists</Playlist>
+                </NavOptions>
+            </Nav>
 
             <Body>
-                <Nav>
-                    <input placeholder="Buscar playlist"/>
-                    
-                    <h3>Início</h3>
-                    <h3 onClick={this.props.onClickCreatePlaylist}>Criar Playlist</h3>
-                    <h3 onClick={this.props.onClickPlaylists}>Suas Playlists</h3>
-                </Nav>
-                
                 <Container>
                     <Title>
                         <h2>Bem vindo</h2>
@@ -29,7 +34,7 @@ export default class App extends React.Component {
                     </Content>
                 </Container>
             </Body>
-
+            
             <Footer>
                 Footer
             </Footer>

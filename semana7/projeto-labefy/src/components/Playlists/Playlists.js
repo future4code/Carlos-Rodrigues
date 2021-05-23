@@ -1,41 +1,48 @@
 import React from 'react';
-import {Header, Body, Nav, Container, Title, Content, Footer} from './styled'
+import {Header, Body, Nav, Container, Title, Content, Footer, Img, HeaderTitle, NavOptions, Home, Create, Playlist, ContainerPlaylist, ButtonsPlaylist, Buttons, Input} from './styled'
+import labefy from '../img/labefy.png'
 
 export default class App extends React.Component {
 
   render() {
       const namePlaylist = this.props.playlists.map((playlist) => {
-          return <div>
+          return <ContainerPlaylist>
                     <p>{playlist.name}</p>
-                    <button value={playlist.id} onClick={this.props.getPlaylistMusics}>Detalhes</button>
+                    <ButtonsPlaylist>
+                        <Buttons value={playlist.id} onClick={this.props.getPlaylistMusics}>Detalhes</Buttons>
 
-                    <button value={playlist.id} onClick={this.props.onClickEdit}>Editar Playlist</button>
+                        <Buttons value={playlist.id} onClick={this.props.onClickEdit}>Inserir Músicas</Buttons>
 
-                    <button value={playlist.id} onClick={this.props.deletePlaylist}>x</button>
-                </div>   
+                        <Buttons value={playlist.id} onClick={this.props.deletePlaylist}>X</Buttons>
+                    </ButtonsPlaylist>
+                </ContainerPlaylist>   
       })
     return (
         <div>
             <Header>
-                <h1>Header</h1>
+                <Img src={labefy}/>
+                <HeaderTitle>Labefy</HeaderTitle>
             </Header>
 
-            <Body>
-                <Nav>
+            <Nav>
+                <Input>
                     <input placeholder="Buscar playlist"/>
-                    <h3 onClick={this.props.onClickHome}>Início</h3>
-                    <h3 onClick={this.props.onClickCreatePlaylist} >Criar Playlist</h3>
-                    <h3>Suas Playlists</h3>
-                </Nav>
+                </Input>
                 
+                <NavOptions>
+                    <Home>Início</Home>
+                    <Create onClick={this.props.onClickCreatePlaylist}>Criar Playlist</Create>
+                    <Playlist onClick={this.props.onClickPlaylists}>Suas Playlists</Playlist>
+                </NavOptions>
+            </Nav>
+
+            <Body>                
                 <Container>
                     <Title>
                         <h2>Suas playlists</h2>
                     </Title>
                     <Content>
-                        <div>
-                            {namePlaylist}
-                        </div>
+                        {namePlaylist}
                     </Content>
                 </Container>
             </Body>

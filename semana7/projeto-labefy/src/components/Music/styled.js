@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import teste from '../img/teste.jpg'
 
 export const Header = styled.div `
     height: 10vh;
@@ -19,34 +18,16 @@ export const Img = styled.img `
 `
 
 export const NavOptions = styled.div `
-    height: 100%;
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-evenly;
-    align-items: center;
+    height:100%;
+    margin-top: 5vh;
+    text-indent: 1.5vw;
 `
 
 export const Home = styled.h3 `
     cursor: pointer;
     height: 8vh;
     display: flex;
-    justify-content: center;
-    flex-grow: 0.1;
     align-items: center;
-    /* background-color: #E3E8EB; */
-    :hover{
-        opacity: 0.5
-    }
-`
-export const Create = styled.h3 `
-    /* background-color: #FE7E02; */
-    cursor: pointer;
-    height: 8vh;
-    display: flex;
-    align-items: center;
-    :hover{
-        opacity: 0.2
-    }
 `
 
 export const Playlist = styled.h3 `
@@ -54,9 +35,12 @@ export const Playlist = styled.h3 `
     height: 8vh;
     display: flex;
     align-items: center;
-    :hover{
-        opacity: 0.2
-    }
+`
+export const Create = styled.h3 `
+    cursor: pointer;
+    height: 8vh;
+    display: flex;
+    align-items: center;
 `
 export const Body = styled.div `
     height: 80vh;
@@ -64,29 +48,17 @@ export const Body = styled.div `
 `
 
 export const Nav = styled.div `
-    width: 100%;
-    background-color: black;
-    color: orange;
-    height: 10vh;
-    display: flex;
+    width: 20%;
+    background-color: #F9B24E;
 `
-export const Input = styled.div `
-    margin-left: 5vw;
-    margin-right: 5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
+
 export const Container = styled.div `
-    width: 100vw;
+    width: 80%;
     display: grid;
     grid-template-rows: 1fr 2fr;
     row-gap: 10vh;
     justify-content: center;
     background-color: #BCCBD5;
-    background-image: url(${teste});
-    background-repeat: no-repeat;
-    background-size: cover;
 `
 export const Title = styled.div `
     border: 2px solid beige;

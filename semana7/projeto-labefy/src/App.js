@@ -4,21 +4,21 @@ import Home from './components/Home/Home'
 import AddMusic from './components/AddMusic/AddMusic';
 import CreatePlaylist from './components/CreatePlaylist/CreatePlaylist';
 import Playlists from './components/Playlists/Playlists';
+import Music from './components/Music/Music'
 import axios from 'axios';
 
 const BASE_URL = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
 
 export default class App extends React.Component {
   state = {
-    page: "",
-    playlistName: "" ,
+    playlistDetail: [],
     playlists: [],
-    musicName: "",
+    playlistName: "" ,
     musicArtist: "",
+    musicName: "",
     musicUrl: "",
+    page: "",
     id:"",
-    musics: [],
-    showPlaylist: false
   }
 
   componentDidMount() {
@@ -82,7 +82,8 @@ export default class App extends React.Component {
       axios.post(BASE_URL, body, header)
       .then(() => {
         this.getPlaylists()
-        this.setState({page: "Playlists"})    
+        this.setState({playlistName: ""})
+        // this.setState({page: "Playlists"})    
       })
       .catch((err) => {
         if (err.response.data.message === "There already is a playlist with a similiar name.") {
@@ -129,6 +130,9 @@ export default class App extends React.Component {
     .then((res) =>{
       this.getPlaylists()
       console.log(res.data)
+      this.setState({musicName:"",
+        musicArtist: "",
+        musicUrl:""})
     })
     .catch((err) => {
       console.log(err.message)
@@ -137,6 +141,7 @@ export default class App extends React.Component {
   }
 
   getPlaylistMusics = (e) => {
+    this.setState({page: "Music"})
     const id = e.target.value
     console.log(id)
     const header = {
@@ -146,6 +151,13 @@ export default class App extends React.Component {
     }
 
     axios.get(`${BASE_URL}/${id}/tracks`, header)
+    .then((res) => {
+      this.setState({playlistDetail: res.data.result.tracks})
+      console.log(res.data.result.tracks)
+    })
+    .catch((err) => {
+      alert(err)
+    })
   }
 
 
@@ -157,7 +169,7 @@ export default class App extends React.Component {
           onClickCreatePlaylist={this.onClickCreatePlaylist}
           onClickPlaylists={this.onClickPlaylists}
           />
-          case 'CreatePlaylist':
+        case 'CreatePlaylist':
             return <CreatePlaylist
             onClickHome={this.onClickHome}
             onClickPlaylists={this.onClickPlaylists}
@@ -179,12 +191,26 @@ export default class App extends React.Component {
       case 'AddMusic':
         return <AddMusic
           onClickCreatePlaylist={this.onClickCreatePlaylist}
+          onClickHome={this.onClickHome}
+          onClickPlaylists={this.onClickPlaylists}
           id={this.state.id}
           addMusic={this.addMusic}
           onChangeMusicName={this.onChangeMusicName}
           onChangeMusicArtist={this.onChangeMusicArtist}
           onChangeMusicUrl={this.onChangeMusicUrl}
+          musicName={this.state.musicName}
+          musicArtist={this.state.musicArtist}
+          musicName={this.state.musicName}
+          />
+        case 'Music':
+            return <Music
+            onClickCreatePlaylist={this.onClickCreatePlaylist}
+            onClickHome={this.onClickHome}
+            onClickPlaylists={this.onClickPlaylists}
+            playlistDetail={this.state.playlistDetail}
         />
+      default:
+        alert("Erro, página não encontrada.")
 
     }
     return (
