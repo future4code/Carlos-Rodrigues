@@ -83,7 +83,7 @@ export default class App extends React.Component {
       .then(() => {
         this.getPlaylists()
         this.setState({playlistName: ""})
-        // this.setState({page: "Playlists"})    
+        alert("Playlist criada!")  
       })
       .catch((err) => {
         if (err.response.data.message === "There already is a playlist with a similiar name.") {
@@ -107,7 +107,9 @@ export default class App extends React.Component {
     axios.delete(`${BASE_URL}/${id}`, header)
     .then(() => {
       this.getPlaylists()
+      alert("Playlist removida!")
     })
+
     .catch((err) => {
       console.log(err.response.data)
     })
@@ -133,6 +135,7 @@ export default class App extends React.Component {
       this.setState({musicName:"",
         musicArtist: "",
         musicUrl:""})
+      alert("Música adicionada com sucesso!")
     })
     .catch((err) => {
       console.log(err.message)
@@ -200,7 +203,7 @@ export default class App extends React.Component {
           onChangeMusicUrl={this.onChangeMusicUrl}
           musicName={this.state.musicName}
           musicArtist={this.state.musicArtist}
-          musicName={this.state.musicName}
+          musicUrl={this.state.musicUrl}
           />
         case 'Music':
             return <Music

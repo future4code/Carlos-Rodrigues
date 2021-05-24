@@ -1,6 +1,7 @@
 import React from 'react';
-import {Header, Body, Nav, NavOptions, Container, Title, Content, Footer, Home, Create, Playlist, HeaderTitle, Img, Input} from './styled'
+import {Header, Body, Nav, NavOptions, Container, Title, Content, Footer, Home, Create, Playlist, HeaderTitle, Img, Input, List} from './styled'
 import labefy from '../img/labefy.png';
+import { Button, PlaylistInput } from '../CreatePlaylist/styled';
 
 export default class App extends React.Component {
 
@@ -13,7 +14,7 @@ export default class App extends React.Component {
             </Header>
             <Nav>
                 <Input>
-                    <input placeholder="Buscar playlist"/>
+                    <PlaylistInput placeholder="Buscar playlist"/>
                 </Input>
                 
                 <NavOptions>
@@ -25,23 +26,25 @@ export default class App extends React.Component {
 
             <Body>
                 <Container>
-                    <Title>
-                        Container
-                    </Title>
                     <Content>
-                        <input placeholder="Nome da música"
+                    <Title>
+                        <h1>Adicione suas músicas Favoritas !</h1>
+                    </Title>
+                    <List>
+                        <PlaylistInput placeholder="Nome da música"
                         onChange={this.props.onChangeMusicName}
                         value={this.props.musicName}
                         />
-                        <input placeholder="Nome do artista"
+                        <PlaylistInput placeholder="Nome do artista"
                         onChange={this.props.onChangeMusicArtist}
                         value={this.props.musicArtist}
                         />
-                        <input placeholder="Url da música"
+                        <PlaylistInput placeholder="Url da música"
                         onChange={this.props.onChangeMusicUrl}
                         value={this.props.musicUrl}
                         />
-                        <button onClick={this.props.addMusic}>Adicionar</button>
+                        <Button onClick={this.props.addMusic}>Adicionar</Button>
+                    </List>
                     </Content>
                 </Container>
             </Body>

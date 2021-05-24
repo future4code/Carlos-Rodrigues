@@ -55,34 +55,38 @@ export const Playlist = styled.h3 `
 export const Title = styled.div `
     display: flex;
     justify-content: center;
-    margin-top: 10vh;
+    margin-top: 5vh;
+    color: white;
 `
 export const Content = styled.div `
     border-radius: 10px;
-    background-color: #AAAAAA;
-    width: 20vw;
+    background-color: orange;
+    opacity: 0.75;
+    width: 40vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 10vh;
+    margin-bottom: 15vh;
+    margin-top: 15vh;
 `
 export const ContainerCreate = styled.div `
     height: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     color: white;
 `
 export const Button = styled.button `
     width: 6vw;
     height: 5vh;
-    border-radius: 10%;
+    border-radius: 12%;
     border: none;
-    background-color: #FE7E02;
+    background-color: black;
     color: white;
     box-shadow: 2px 2px black;
-    
+    cursor: pointer;
 `
 export const Footer = styled.div `
     height: 10vh;
@@ -115,11 +119,18 @@ export const NavOptions = styled.div `
 export const Container = styled.div `
     width: 100vw;
     display: grid;
-    grid-template-rows: 1fr 2fr;
-    row-gap: 10vh;
+    /* grid-template-rows: 1fr 2fr; */
+    /* row-gap: 10vh; */
     justify-content: center;
     background-color: #BCCBD5;
     background-image: url(${teste});
     background-repeat: no-repeat;
     background-size: cover;
+`
+export const PlaylistInput = styled.input `
+    border: none;
+    border-radius: 20px;
+    width: 15vw;
+    height: 5vh;
+    outline: none;
 `

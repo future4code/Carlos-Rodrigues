@@ -1,6 +1,7 @@
 import React from 'react';
 import {Header, Body, Nav, Container, Title, Content, Footer, HeaderTitle, Img, NavOptions, Home, Create, Playlist} from './styled'
 import labefy from '../img/labefy.png'
+import { PlaylistInput } from '../CreatePlaylist/styled';
 
 
 export default class App extends React.Component {
@@ -25,16 +26,15 @@ export default class App extends React.Component {
                 <HeaderTitle>Labefy</HeaderTitle>
             </Header>
 
-            <Body>
-                <Nav>
-                    <NavOptions>
-                    <input placeholder="Buscar playlist"/>
+            <Nav>
+                <NavOptions>
+                    <PlaylistInput placeholder="Buscar playlist"/>
                     <Home onClick={this.props.onClickHome}>Início</Home>
                     <Create onClick={this.props.onClickCreatePlaylist}>Criar Playlist</Create>
                     <Playlist onClick={this.props.onClickPlaylists}>Suas Playlists</Playlist> 
-                    </NavOptions>
-                </Nav>
-                
+                </NavOptions>
+            </Nav>
+            <Body>   
                 <Container>
                     <Content>
                         <h2>Suas músicas.</h2>

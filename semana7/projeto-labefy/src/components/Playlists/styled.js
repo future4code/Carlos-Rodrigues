@@ -27,19 +27,30 @@ export const Title = styled.div `
     display: flex;
     justify-content: center;
     height: fit-content;
+    color: white;
+    width: 100%;
 `
 export const Content = styled.div `
-    border: 2px solid gray;
     width: 70vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    background-color: orange;
+    opacity: 0.8;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    border-radius: 10px;
 `
 export const ContainerPlaylist = styled.div `
     width: 25vw;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-left: 5vw;
+    justify-content: space-around;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    margin-left: 4vw;
+    margin-right: 3vw;
+    padding-right: 2vw;
+    background-color: black;
+    margin-top: 2vh;
 `
 export const ButtonsPlaylist  = styled.div `
     width: 15vw;
@@ -85,11 +96,8 @@ export const NavOptions = styled.div `
 `
 export const Container = styled.div `
     width: 100vw;
-    display: grid;
-    grid-template-rows: 1fr 2fr;
-    row-gap: 10vh;
+    display: flex;
     justify-content: center;
-    background-color: #BCCBD5;
     background-image: url(${teste});
     background-repeat: no-repeat;
     background-size: cover;
@@ -116,7 +124,6 @@ export const Create = styled.h3 `
         opacity: 0.5
     }
 `
-
 export const Playlist = styled.h3 `
     cursor: pointer;
     height: 8vh;
@@ -125,4 +132,8 @@ export const Playlist = styled.h3 `
     :hover{
         opacity: 0.5
     }
+`
+export const List = styled.div `
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 `

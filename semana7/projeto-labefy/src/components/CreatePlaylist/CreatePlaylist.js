@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header, Body, Nav, Container, Title, Content, Footer, Img, Create, HeaderTitle, NavOptions, Home, Playlist, ContainerCreate, Button, Input} from './styled'
+import {Header, Body, Nav, Container, Title, Content, Footer, Img, Create, HeaderTitle, NavOptions, Home, Playlist, ContainerCreate, Button, Input, PlaylistInput} from './styled'
 import labefy from '../img/labefy.png';
 
 export default class App extends React.Component {
@@ -14,7 +14,7 @@ export default class App extends React.Component {
             </Header>
             <Nav>
                 <Input>
-                    <input placeholder="Buscar playlist"/>
+                    <PlaylistInput placeholder="Buscar playlist"/>
                 </Input>
                 
                 <NavOptions>
@@ -23,23 +23,20 @@ export default class App extends React.Component {
                     <Playlist onClick={this.props.onClickPlaylists}>Suas Playlists</Playlist>
                 </NavOptions>
             </Nav>
-            <Body>
-                
+            <Body>  
                 <Container>
+                    <Content>
                     <Title>
                         <h2>Crie as melhores playlists!</h2>
                     </Title>
-                    <Content>
                         <ContainerCreate>
-
                         <p><strong>Nome da Playlist:</strong></p>
-                            <input 
+                            <PlaylistInput 
                             value={this.props.playlistName}
                             onChange={this.props.onChangePlaylistName}
                             placeholder="Digite o nome da playlist"
                             />
-                            <Button onClick={this.props.createPlaylist}>Criar!</Button>
-                        
+                            <Button onClick={this.props.createPlaylist}>Criar!</Button>                
                         </ContainerCreate>
                     </Content>
                 </Container>

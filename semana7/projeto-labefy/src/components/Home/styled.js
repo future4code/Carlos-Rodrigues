@@ -80,26 +80,29 @@ export const Input = styled.div `
 export const Container = styled.div `
     width: 100vw;
     display: grid;
-    grid-template-rows: 1fr 2fr;
-    row-gap: 10vh;
     justify-content: center;
-    background-color: #BCCBD5;
     background-image: url(${teste});
     background-repeat: no-repeat;
     background-size: cover;
 `
 export const Title = styled.div `
-    border: 2px solid beige;
     display: flex;
     justify-content: center;
+    margin-bottom: 10vh;
 `
 export const Content = styled.div `
-    border: 2px solid gray;
     width: 30vw;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    background-color: orange;
+    opacity: 0.75;
+    border-radius: 10px;
+    text-indent: 1vw;
+    margin-top: 10vh;
+    color:white;
 `
 export const Footer = styled.div `
     height: 10vh;

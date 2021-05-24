@@ -24,17 +24,19 @@ export const Body = styled.div `
     display: flex;
 `
 export const Title = styled.div `
-    border: 2px solid beige;
-    display: flex;
-    justify-content: center;
+    color: white;
 `
 export const Content = styled.div `
-    border: 2px solid gray;
-    width: 30vw;
+    background-color: orange;
+    opacity: 0.75;
+    border-radius: 10px;
+    height: 50vh;
+    width: 40vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 3px 3px black;
 `
 export const Footer = styled.div `
     height: 10vh;
@@ -65,11 +67,9 @@ export const NavOptions = styled.div `
 `
 export const Container = styled.div `
     width: 100vw;
-    display: grid;
-    grid-template-rows: 1fr 2fr;
-    row-gap: 10vh;
+    display:flex;
     justify-content: center;
-    background-color: #BCCBD5;
+    align-items: center;
     background-image: url(${teste});
     background-repeat: no-repeat;
     background-size: cover;
@@ -81,13 +81,11 @@ export const Home = styled.h3 `
     justify-content: center;
     flex-grow: 0.1;
     align-items: center;
-    /* background-color: #E3E8EB; */
     :hover{
         opacity: 0.5
     }
 `
 export const Create = styled.h3 `
-    /* background-color: #FE7E02; */
     cursor: pointer;
     height: 8vh;
     display: flex;
@@ -105,4 +103,12 @@ export const Playlist = styled.h3 `
     :hover{
         opacity: 0.5
     }
+`
+export const List = styled.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 50%;
+    
 `
