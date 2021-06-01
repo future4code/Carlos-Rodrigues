@@ -34,9 +34,9 @@ export default function App() {
   })
   return (
     <div>
-      <h2>Bora começar</h2>
+      <h2>Bora começar!</h2>
       <select onChange={changePokeName}>
-        <option value="">Selecione um pokemon!</option>
+        <option value="">Selecione um pokemon</option>
         {poke}
       </select>
       {pokeName && <PokeCard pokemon={pokeName}/>}
