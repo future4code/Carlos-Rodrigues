@@ -1,9 +1,9 @@
 import React, {useState} from 'react'
 import FindMatch from '../FindMatch/FindMatch'
 import YourMatchs from '../YourMatchs/YourMatchs'
-import { Head } from './styled'
+import {Bar, Container, Content} from './styled'
 
-export default function Header() {
+export default function Page() {
 
     const [option, setOption] = useState(true)
     const [page, setPage] = useState("home")
@@ -32,10 +32,14 @@ export default function Header() {
         }
     }
     return (
-        <Head>
-            <p>AstroMatch</p>
-            {renderButton()}
-            {renderPage()}
-        </Head>
+        <Container>
+            <Bar>
+                <p>AstroMatch</p>
+                {renderButton()}
+            </Bar>
+            <Content>
+                {renderPage()}
+            </Content>
+        </Container>
     )
 }

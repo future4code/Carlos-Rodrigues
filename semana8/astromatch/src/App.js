@@ -1,12 +1,13 @@
 import React from 'react';
 import Page from './components/Page/Page';
+import ResetButton from './components/ResetButton/ResetButton';
 
-function App() {
+export default function App() {
   return (
     <div>
       <Page/>
+      <ResetButton/>
     </div>
   );
 }
 
-export default App;

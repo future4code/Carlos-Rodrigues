@@ -1,10 +1,15 @@
 import React, {useState} from 'react';
+import MatchCard from './MatchCard';
 
 export default function YourMatchs() {
 
     return (
         <div>
-            <p>Seus matchs</p>
+            <MatchCard/>
+            <MatchCard/>
+            <MatchCard/>
+            <MatchCard/>
+            <MatchCard/>
         </div>
     )
 }
