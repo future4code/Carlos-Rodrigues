@@ -1,9 +1,13 @@
 import React from 'react';
+import { useHistory } from 'react-router';
+import { goBack } from '../../routes/coordinator';
 
 export default function ApplicationFormPage() {
-
+    const history = useHistory()
+    
     return (
         <div>
+            <button onClick={() => goBack(history)}>Voltar</button>
             <h1>ApplicationFormPage</h1>
             <input placeholder="Nome" type="name"/>
             <input placeholder="Idade" type="number"/>
@@ -12,7 +16,7 @@ export default function ApplicationFormPage() {
             <select>
                 <option>País</option>
             </select>
-            <button>Inscrever</button>
+            <button>Enviar</button>
             <hr/>
         </div>
     )

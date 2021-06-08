@@ -1,9 +1,14 @@
 import React from 'react';
+import { useHistory } from 'react-router';
+import { goBack } from '../../routes/coordinator';
+
 
 export default function TripDetailsPage() {
-
+    const history = useHistory()
+    
     return (
         <div>
+            <button onClick={() => goBack(history)}>Voltar</button>
             <h1>TripDetailsPage</h1>
             <p>Nome viagem</p>
             <p>Descrição</p>
