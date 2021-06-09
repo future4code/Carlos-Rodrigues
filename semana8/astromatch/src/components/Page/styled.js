@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div `
   background-color: lightpink;
-  height: 70vh;
-  width: 30vw;
+  height: 550px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 15vh;
+  margin-top: 20px;
 `
 export const Bar = styled.div `
   background-color: purple;

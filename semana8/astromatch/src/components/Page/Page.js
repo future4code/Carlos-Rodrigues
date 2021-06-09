@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import FindMatch from '../FindMatch/FindMatch'
+import ProfilePage from '../ProfilePage/ProfilePage'
 import YourMatchs from '../YourMatchs/YourMatchs'
 import {Bar, Container, Content} from './styled'
 
@@ -26,7 +26,7 @@ export default function Page() {
     }
     const renderPage = () => {
         if (page === "home") {
-            return <FindMatch/>
+            return <ProfilePage/>
         } else if (page === "match") {
             return <YourMatchs/>
         }
