@@ -1,12 +1,12 @@
 import axios from 'axios';
 import {useEffect, useState} from 'react'
 
-const useRequestData = (url, initialState) => {
+const useRequestDetail = (url, header, initialState) => {
 
     const [data, setData] = useState(initialState)
 
     const getData = () => {
-        axios.get(url)
+        axios.get(url, header)
         .then((res) => {
             setData(res.data)
         })
@@ -23,4 +23,4 @@ const useRequestData = (url, initialState) => {
 }
 
 
-export default useRequestData;
+export default useRequestDetail;

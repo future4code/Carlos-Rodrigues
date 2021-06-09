@@ -1,11 +1,22 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { goBack } from '../../routes/coordinator';
+import useRequestDetail from '../../hooks/useRequestDetail';
+import {BASE_URL } from '../../constants/url';
 
 
 export default function TripDetailsPage() {
     const history = useHistory()
     
+    const params = useParams()
+    console.log(params)
+
+    const header =  {
+        auth: localStorage.getItem("token")
+    }
+
+    console.log(header)
+    // useRequestDetail(`${BASE_URL}/trip/${params.id}`, auth)
     return (
         <div>
             <button onClick={() => goBack(history)}>Voltar</button>

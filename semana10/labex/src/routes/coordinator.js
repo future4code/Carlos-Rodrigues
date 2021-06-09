@@ -15,8 +15,8 @@ export const goToCreateTrip = (history) => {
     history.push("/admin/trips/create")
 }
 
-export const goToTripDetails = (history) => {
-    history.push("/admin/trips/:id")
+export const goToTripDetails = (history, id) => {
+    history.push(`/admin/trips/${id}`)
 }
 
 export const goToListTrip = (history) => {
