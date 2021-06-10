@@ -14,7 +14,6 @@ export default function ListTrip() {
             <button onClick={() =>goToHome(history)}>Home</button>
             <h1>ListTrip</h1>
             <h3>CardTrip</h3>
-            <button onClick={() => goToApplicationForm(history)}>Inscreva-se</button>
             <hr/>
             <CardTrip/>
         </div>

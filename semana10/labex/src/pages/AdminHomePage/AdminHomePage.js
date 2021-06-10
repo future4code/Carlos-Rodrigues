@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router";
 import useProtectedPage from "../../hooks/useProtectedPage";
-import { goToCreateTrip, goToHome, goToLogin, goToTripDetails } from "../../routes/coordinator";
+import { goToCreateTrip, goToHome} from "../../routes/coordinator";
 import AdminCardTrip from '../../components/AdminCardTrip/AdminCardTrip'
 
 export default function AdminHomePage() {

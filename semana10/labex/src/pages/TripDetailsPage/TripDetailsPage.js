@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { goBack } from '../../routes/coordinator';
-import useRequestDetail from '../../hooks/useRequestDetail';
+// import useRequestDetail from '../../hooks/useRequestDetail';
 import {BASE_URL } from '../../constants/url';
 import axios from 'axios';
 
@@ -14,7 +14,7 @@ export default function TripDetailsPage() {
 
     const params = useParams()
      
-    const getTripDetail =  () => {
+    useEffect(() => {
         const header = {
             headers : {
                 auth: localStorage.getItem("token")
@@ -28,14 +28,9 @@ export default function TripDetailsPage() {
         .catch((err) => {
             alert(err.response.data.message)
         })
-
-    }
-
-    useEffect(() => {
-        getTripDetail()
-    }, [])
+    }, [params.id, setTrip])
     
-    console.log("trip:" ,trip.trip.name)
+    console.log("trip:", trip)
     return (
         <div>
             <button onClick={() => goBack(history)}>Voltar</button>

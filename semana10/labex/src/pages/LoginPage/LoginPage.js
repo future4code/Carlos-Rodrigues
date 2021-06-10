@@ -1,24 +1,25 @@
 import React from 'react';
-import { goToAdminHome, goToHome } from '../../routes/coordinator';
+import { goToHome } from '../../routes/coordinator';
 import { useHistory } from 'react-router';
-import useInput from '../../hooks/useInput';
 import axios from 'axios';
 import { BASE_URL } from '../../constants/url';
 import useProtectedPage from '../../hooks/useProtectedPage'
+import useForm from '../../hooks/useForm';
 
 
 export default function LoginPage() {
+    useProtectedPage()
+
+    const {form, onChange}  = useForm({email: "", password: ""})
 
     const history = useHistory()
-    const [email, handleEmail] = useInput("")
-    const [password, handlePassword] = useInput("")
 
-    useProtectedPage()
-    const onClickLogin = () => {
+
+    const onClickLogin = (e) => {
+
+        e.preventDefault()     
         
-        const body = {email, password}
-
-        axios.post(`${BASE_URL}/login`, body)
+        axios.post(`${BASE_URL}/login`, form)
         .then((res) => {
             localStorage.setItem("token", res.data.token)
             history.push("/admin/trip/list")
@@ -30,10 +31,28 @@ export default function LoginPage() {
     return (
         <div>
             <h1>LoginPage</h1>
-            <input value={email} onChange={handleEmail} type="email" placeholder="E-mail"/>
-            <input value={password} onChange={handlePassword} type="password" placeholder="Senha"/>
-            <button onClick={onClickLogin}>Entrar</button>
-            <button onClick={() => goToHome(history)}>Home</button>
+            <form onSubmit={onClickLogin}>
+                <input
+                    name="email"
+                    value={form.email} 
+                    onChange={onChange}
+                    type="email" 
+                    placeholder="E-mail"
+                    required   
+                />
+                <input
+                    name="password"
+                    value={form.password} 
+                    onChange={onChange}
+                    type="password"
+                    placeholder="Senha"
+                    required
+                    pattern={"^.{6,}"}
+                    title={"Sua senha deve possuir no mínimo 6 caracteres."}
+                />
+                <button>Entrar</button>
+                <button onClick={() => goToHome(history)}>Home</button>
+            </form>
             <hr/>
         </div>
     )
