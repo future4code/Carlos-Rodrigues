@@ -11,16 +11,13 @@ export default function ApplicationFormPage() {
     
     const params = useParams()
 
-    // const listTrip = trips.trips ? trips.trips.map((trip) => {
-    //     if (trips.trips.id === params.id) {
-    //         return <h2>{trip.name}</h2>
-    //     }
-    // }) : <h2>Carregando...</h2>
-
-    // console.log(listTrip)
-
-    trips.trips && console.log("trips:", trips.trips)
-    console.log("params:", params.id)
+        
+    const listTrip = trips.trips ? trips.trips.map((trip) => {
+        if (trip.id === params.id) {
+            return <h2 key={trip.id}>{trip.name}</h2>
+        } return false
+    }) : <h2>Carregando...</h2>
+    
 
     const onClickSend = (e) => {
         e.preventDefault()
@@ -29,6 +26,7 @@ export default function ApplicationFormPage() {
         <div>
             <button onClick={() => goBack(history)}>Voltar</button>
             <h1>ApplicationFormPage</h1>
+            {listTrip}
             <form onSubmit={onClickSend}>
                 <input 
                     placeholder="Nome"

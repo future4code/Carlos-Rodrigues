@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from 'react-router';
 import CardTrip from '../../components/CardTrip/CardTrip';
-import { goToApplicationForm, goToHome } from '../../routes/coordinator';
+import { goToHome } from '../../routes/coordinator';
 
 
 export default function ListTrip() {

@@ -7,15 +7,11 @@ import { goToApplicationForm } from '../../routes/coordinator';
 export default function CardTrip() {
     const history = useHistory()
 
-    const onClickDiv = (id) => {
-        console.log(id)
-    }
-    
     const trips = useRequestData(`${BASE_URL}/trips`, {})
 
     const listTrip = trips.trips ? trips.trips.map((trip) => {
         return (
-                <div key={trip.id} onClick={() => onClickDiv(trip.id)}>
+                <div key={trip.id}>
                     <p>Nome: {trip.name}</p>
                     <p>Destino: {trip.planet}</p>
                     <p>Descrição: {trip.description}</p>
