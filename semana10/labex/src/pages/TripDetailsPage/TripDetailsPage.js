@@ -29,13 +29,26 @@ export default function TripDetailsPage() {
             alert(err.response.data.message)
         })
     }, [params.id, setTrip])
+
+    // const listTrip = trip.trip ? trip.trip.map((detail) => {
+    //     return (
+    //             <div key={trip.id}>
+    //                 <p>Nome: {trip.name}</p>
+    //                 <p>Destino: {trip.planet}</p>
+    //                 <p>Descrição: {trip.description}</p>
+    //                 <p>Data de partida: {trip.date}</p>
+    //                 <p>Duração: {trip.durationInDays} dias</p>
+    //                 <hr/>
+    //             </div>
+    //         )
+    // }) : <h2>Carregando...</h2>
     
     console.log("trip:", trip)
     return (
         <div>
             <button onClick={() => goBack(history)}>Voltar</button>
             <h1>TripDetailsPage</h1>
-            <p>Nome viagem</p>
+            <p>Nome viagem: </p>
             <p>Descrição</p>
             <p>Data</p>
             <h2>Candidatos Pendentes</h2>

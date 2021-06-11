@@ -1,25 +1,38 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {BASE_URL } from '../../constants/url';
 import { useHistory } from 'react-router';
 import useRequestData from '../../hooks/useRequestData';
 import { goToTripDetails } from '../../routes/coordinator';
+import axios from 'axios';
+import { header } from '../../constants/header';
 
 export default function AdminCardTrip() {
 
     const history = useHistory()
+
+    const [trips, getData] = useRequestData(`${BASE_URL}/trips`, {})
+
+    const onClickDelete = (e) => {
+        const id = (e.target.value)
+
+        axios.delete(`${BASE_URL}/trips/${id}`, header)
+        .then((res) => {
+            console.log(res)
+            getData(`${BASE_URL}/trips`)
+        })
+        .catch((err) => {
+            console.log(err.response.data.message)
+        })
+    }
     
-    // const goToTripDetails = (id) => {
-    //     history.push(`/admin/trips/${id}`)
-    // }
-    const trips = useRequestData(`${BASE_URL}/trips`, {})
-
-
     const listTrip = trips.trips ? trips.trips.map((trip) => {
         return (
-                <div key={trip.id} onClick={() => goToTripDetails(history, trip.id)}>
-                    <p>Nome: {trip.name}</p>
-                    <p>Esse card vai ser clicável</p>
-                    <button>Excluir viagem</button>
+                <div key={trip.id}>
+                    <div onClick={() => goToTripDetails(history, trip.id)}>
+                        <p>Nome: {trip.name}</p>
+                        <p>Esse card vai ser clicável</p>
+                    </div>
+                    <button value={trip.id} onClick={onClickDelete}>Excluir viagem</button>
                     <hr/>
                 </div>
             )
@@ -29,4 +42,5 @@ export default function AdminCardTrip() {
             {listTrip}
         </div>
     )
+
 }

@@ -5,10 +5,11 @@ import useRequestData from '../../hooks/useRequestData';
 import { goToApplicationForm } from '../../routes/coordinator';
 
 export default function CardTrip() {
+
     const history = useHistory()
 
-    const trips = useRequestData(`${BASE_URL}/trips`, {})
-
+    const [trips, a] = useRequestData(`${BASE_URL}/trips`, {})
+    
     const listTrip = trips.trips ? trips.trips.map((trip) => {
         return (
                 <div key={trip.id}>
