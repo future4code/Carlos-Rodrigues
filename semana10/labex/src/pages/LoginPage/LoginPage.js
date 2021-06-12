@@ -1,10 +1,10 @@
 import React from 'react';
-import { goToHome } from '../../routes/coordinator';
 import { useHistory } from 'react-router';
 import axios from 'axios';
 import { BASE_URL } from '../../constants/url';
 import useProtectedPage from '../../hooks/useProtectedPage'
 import useForm from '../../hooks/useForm';
+import ButtonHome from '../../components/ButtonHome/ButtonHome';
 
 
 export default function LoginPage() {
@@ -30,6 +30,7 @@ export default function LoginPage() {
     }
     return (
         <div>
+            <ButtonHome/>
             <h1>LoginPage</h1>
             <form onSubmit={onClickLogin}>
                 <input
@@ -51,7 +52,6 @@ export default function LoginPage() {
                     title={"Sua senha deve possuir no mínimo 6 caracteres."}
                 />
                 <button>Entrar</button>
-                <button onClick={() => goToHome(history)}>Home</button>
             </form>
             <hr/>
         </div>

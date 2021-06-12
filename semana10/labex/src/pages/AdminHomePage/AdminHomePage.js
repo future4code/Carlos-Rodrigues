@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import useProtectedPage from "../../hooks/useProtectedPage";
 import { goToCreateTrip, goToHome} from "../../routes/coordinator";
 import AdminCardTrip from '../../components/AdminCardTrip/AdminCardTrip'
+import ButtonHome from '../../components/ButtonHome/ButtonHome';
 
 export default function AdminHomePage() {
     const history = useHistory();
@@ -16,15 +17,13 @@ export default function AdminHomePage() {
     console.log()
     return (
         <div>
+            <ButtonHome/>
             <h1>AdminHomePage</h1>
-            <button onClick={() => goToHome(history)}>Início</button>
             <button onClick={() => goToCreateTrip(history)}>Nova viagem</button>
             <button onClick={onClickLogout}>Logout</button>
             <br/>
             <h3>Suas viagens</h3>
             <AdminCardTrip/>
-            {/* <button onClick={() => goToTripDetails(history)}>CardViagem clicável</button> */}
-            {/* <button>Excluir viagem</button> */}
             <hr/>
         </div>
     )

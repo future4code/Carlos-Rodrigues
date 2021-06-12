@@ -6,8 +6,8 @@ export const Select = styled.select `
 export default function CountriesList(props) {
 
 	return (
-		<select name="country" id="paises" onChange={props.onChange} name={props.name}>
-			<option value="" disabled selected>Selecione seu país</option>
+		<select id="paises" onChange={props.onChange} name={props.name}>
+			<option value="" defaultValue>Selecione seu país</option>
 			<option value="Afeganistão">Afeganistão</option>
 			<option value="África do Sul">África do Sul</option>
 			<option value="Albânia">Albânia</option>

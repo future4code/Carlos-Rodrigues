@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import {BASE_URL } from '../../constants/url';
 import { useHistory } from 'react-router';
 import useRequestData from '../../hooks/useRequestData';
 import { goToTripDetails } from '../../routes/coordinator';
 import axios from 'axios';
 import { header } from '../../constants/header';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export default function AdminCardTrip() {
 
@@ -32,7 +34,9 @@ export default function AdminCardTrip() {
                         <p>Nome: {trip.name}</p>
                         <p>Esse card vai ser clicável</p>
                     </div>
-                    <button value={trip.id} onClick={onClickDelete}>Excluir viagem</button>
+                    <IconButton aria-label="delete" value={trip.id} onClick={onClickDelete}>
+                        <DeleteIcon fontSize="medium"/>
+                    </IconButton>
                     <hr/>
                 </div>
             )

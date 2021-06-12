@@ -1,17 +1,13 @@
 import React from 'react';
-import { useHistory } from 'react-router';
 import { BASE_URL } from '../../constants/url';
 import useForm from '../../hooks/useForm';
-import { goBack } from '../../routes/coordinator';
 import axios from 'axios';
 import { header } from '../../constants/header';
+import ButtonBack from '../../components/ButtonBack/ButtonBack'
 
 export default function CreateTripPage() {
-    const history = useHistory()
 
     const {form, onChange, cleanFields} = useForm({name: "", planet: "", date: "", description: "", durationInDays: ""})
-
-    
 
     const data = () =>{
         const dateToday = new Date(Date.now()).toLocaleString().slice(0, 10);
@@ -28,20 +24,18 @@ export default function CreateTripPage() {
         console.log(form)
 
         axios.post(`${BASE_URL}/trips`, form, header)
-        .then((res) => {
-            console.log(res)
+        .then(() => {
             cleanFields()
+            alert("Viagem criada com sucesso!")
         })
-        .catch((err) => {
-            console.log(err.response.data.message)
-            cleanFields()
+        .catch(() => {
+            alert("Verifique se todos os campos foram preenchidos corretamente.")
         })
     }
     
     return (
         <div>
-            <button onClick={() => goBack(history)}>Voltar</button>
-
+            <ButtonBack/>
             <form onSubmit={onClickCreate}>
                 <h1>CreateTripPage</h1>
                 <input 

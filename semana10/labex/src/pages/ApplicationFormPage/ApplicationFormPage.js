@@ -1,12 +1,12 @@
 import React from 'react';
 import { useHistory, useParams } from 'react-router';
-import { goBack } from '../../routes/coordinator';
 import useRequestData from '../../hooks/useRequestData';
 import useForm from '../../hooks/useForm';
 import {BASE_URL } from '../../constants/url';
 import axios from 'axios';
 import { header } from '../../constants/header';
 import CountriesList from '../../components/CountriesList/CountriesList';
+import ButtonBack from '../../components/ButtonBack/ButtonBack';
 
 export default function ApplicationFormPage() {
     const history = useHistory()
@@ -28,18 +28,17 @@ export default function ApplicationFormPage() {
         e.preventDefault()
         console.log(form)
         axios.post(`${BASE_URL}/trips/${params.id}/apply`, form, header)
-        .then((res) => {
-            console.log(res.data.message)
+        .then(() => {
+            alert("Inscrição realizada !")
             cleanFields()
         })
-        .catch((err) => {
-            console.log(err.response.data.message)
-            cleanFields()
+        .catch(() => {
+            alert("Verifique se todos os campos foram preenchidos corretamente.")
         })
     }
     return (
         <div>
-            <button onClick={() => goBack(history)}>Voltar</button>
+            <ButtonBack/>
             <h1>ApplicationFormPage</h1>
             {listTrip}
             <form onSubmit={onClickSend}>
