@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import useRequestData from '../../hooks/useRequestData';
 import useForm from '../../hooks/useForm';
 import {BASE_URL } from '../../constants/url';
@@ -7,9 +7,9 @@ import axios from 'axios';
 import { header } from '../../constants/header';
 import CountriesList from '../../components/CountriesList/CountriesList';
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
+import TextField from '@material-ui/core/TextField';
 
 export default function ApplicationFormPage() {
-    const history = useHistory()
 
     const [trips] = useRequestData(`${BASE_URL}/trips`, {})
     
@@ -42,8 +42,9 @@ export default function ApplicationFormPage() {
             <h1>ApplicationFormPage</h1>
             {listTrip}
             <form onSubmit={onClickSend}>
-                <input 
-                    placeholder="Nome"
+                <TextField
+                    variant="outlined" 
+                    label="Nome"
                     type="name"
                     value={form.name}
                     onChange={onChange}
@@ -51,8 +52,9 @@ export default function ApplicationFormPage() {
                     name="name"
                     required
                 />
-                <input
-                    placeholder="Idade"
+                <TextField
+                    variant="outlined"
+                    label="Idade"
                     type="number"
                     value={form.age}
                     onChange={onChange}
@@ -60,8 +62,9 @@ export default function ApplicationFormPage() {
                     name="age"
                     required
                 />
-                <input
-                    placeholder="Profissão"
+                <TextField
+                    variant="outlined"
+                    label="Profissão"
                     type="text"
                     name="profession"
                     value={form.profession}
@@ -69,8 +72,9 @@ export default function ApplicationFormPage() {
                     pattern={"^.{8,}"}
                     required
                 />
-                <input 
-                    placeholder="Texto de candidatura"
+                <TextField
+                    variant="outlined" 
+                    label="Texto de candidatura"
                     type="text"
                     name="applicationText"
                     value={form.applicationText}

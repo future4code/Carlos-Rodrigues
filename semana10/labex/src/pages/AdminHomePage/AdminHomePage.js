@@ -1,9 +1,11 @@
 import React from "react";
 import { useHistory } from "react-router";
 import useProtectedPage from "../../hooks/useProtectedPage";
-import { goToCreateTrip, goToHome} from "../../routes/coordinator";
+import { goToCreateTrip} from "../../routes/coordinator";
 import AdminCardTrip from '../../components/AdminCardTrip/AdminCardTrip'
 import ButtonHome from '../../components/ButtonHome/ButtonHome';
+import { Button, Container } from "@material-ui/core";
+import {ButtonContainer, Header, TopContainer} from './stlyled'
 
 export default function AdminHomePage() {
     const history = useHistory();
@@ -14,17 +16,26 @@ export default function AdminHomePage() {
         localStorage.removeItem("token")
         history.push("/login")
     }
-    console.log()
     return (
-        <div>
-            <ButtonHome/>
-            <h1>AdminHomePage</h1>
-            <button onClick={() => goToCreateTrip(history)}>Nova viagem</button>
-            <button onClick={onClickLogout}>Logout</button>
-            <br/>
-            <h3>Suas viagens</h3>
-            <AdminCardTrip/>
-            <hr/>
-        </div>
+        <Container>
+            <div>
+                <Header>
+                    <TopContainer>
+                        <ButtonHome/>
+                        <h1>AdminHomePage</h1>
+                    </TopContainer>
+                    <ButtonContainer>
+                        <Button size="small" variant="contained" color="primary" onClick={() => goToCreateTrip(history)}>Nova viagem</Button>
+                        <Button size="small" variant="contained" color="primary" onClick={onClickLogout}>Logout</Button>
+                    </ButtonContainer>
+                </Header>
+
+          
+
+                <h3>Suas viagens</h3>
+                <AdminCardTrip/>
+                <hr/>
+            </div>
+        </Container>
     )
 }

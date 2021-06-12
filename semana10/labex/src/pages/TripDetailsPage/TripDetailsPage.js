@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router';
-import { goBack } from '../../routes/coordinator';
+import { useParams } from 'react-router';
 import {BASE_URL } from '../../constants/url';
 import axios from 'axios';
-import { header } from '../../constants/header';
-
+import {header} from '../../constants/header'
+import ButtonBack from '../../components/ButtonBack/ButtonBack';
+import { Button } from '@material-ui/core';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 
 export default function TripDetailsPage() {
     const params = useParams()
-
-    const history = useHistory()
 
     const [trip, setTrip] = useState({})
 
@@ -17,9 +17,10 @@ export default function TripDetailsPage() {
         getTripDetails()
     }, [params.id, setTrip])
     
-
-
+    
     const getTripDetails = () => {
+
+
         axios.get(`${BASE_URL}/trip/${params.id}`, header)
         .then((res) => {
             setTrip(res.data.trip)
@@ -39,15 +40,13 @@ export default function TripDetailsPage() {
             getTripDetails(params.id)
         })
         .catch((err) => {
-            console.log(err)
+            alert(err.response.data.message)
         })
     }
-    
-    console.log(trip)
-     
+         
     return (
         <div>
-            <button onClick={() => goBack(history)}>Voltar</button>
+            <ButtonBack/>
             <h1>TripDetailsPage</h1>
             <p>Nome viagem: </p>
             <p>Descrição</p>
@@ -58,8 +57,8 @@ export default function TripDetailsPage() {
                     return (
                         <div key={candidate.id}>
                             <p>{candidate.name}</p>
-                            <button onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</button>
-                            <button onClick={() => onClickApprove(trip.id, candidate.id, false)}>Recusar</button>
+                            <Button variant="contained" color="primary" endIcon={<ThumbUpIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</Button>
+                            <Button variant="contained" color="primary" endIcon={<ThumbDownIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, false)}>Recusar</Button>
                         </div>
                     )
                 })}
@@ -67,7 +66,7 @@ export default function TripDetailsPage() {
             <div>
                 <h2>Candidatos Aprovados</h2>
                 {trip.approved ? trip.approved.map((candidate) => {
-                    return <p>{candidate.name}</p>
+                    return <p key={candidate.id}>{candidate.name}</p>
                 }) : <p>Nenhum candidato</p>}
             </div>
         </div>

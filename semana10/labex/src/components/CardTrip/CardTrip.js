@@ -20,7 +20,7 @@ export default function CardTrip() {
                     <p>Descrição: {trip.description}</p>
                     <p>Data de partida: {trip.date}</p>
                     <p>Duração: {trip.durationInDays} dias</p>
-                    <Button   variant="contained" color="primary" endIcon={<SendIcon/>} onClick={() => goToApplicationForm(history, trip.id)}>
+                    <Button variant="contained" color="primary" endIcon={<SendIcon/>} onClick={() => goToApplicationForm(history, trip.id)}>
                         Inscreva-se
                     </Button>
                     <hr/>

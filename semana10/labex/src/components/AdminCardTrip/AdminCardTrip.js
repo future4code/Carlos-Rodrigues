@@ -35,7 +35,7 @@ export default function AdminCardTrip() {
                         <p>Esse card vai ser clicável</p>
                     </div>
                     <IconButton aria-label="delete" value={trip.id} onClick={onClickDelete}>
-                        <DeleteIcon fontSize="medium"/>
+                        <DeleteIcon/>
                     </IconButton>
                     <hr/>
                 </div>
