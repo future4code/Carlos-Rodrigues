@@ -4,9 +4,10 @@ import { useHistory } from 'react-router';
 import useRequestData from '../../hooks/useRequestData';
 import { goToTripDetails } from '../../routes/coordinator';
 import axios from 'axios';
-import { header } from '../../constants/header';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { Container } from '@material-ui/core';
+import { CardContainer, Card, MainContainer } from './styled';
 
 export default function AdminCardTrip() {
 
@@ -14,6 +15,11 @@ export default function AdminCardTrip() {
 
     const [trips, getData] = useRequestData(`${BASE_URL}/trips`, {})
 
+    const header = {
+        headers : {
+            auth: localStorage.getItem("token")
+        }
+    }
     const onClickDelete = (e) => {
         const id = (e.target.value)
 
@@ -23,24 +29,27 @@ export default function AdminCardTrip() {
             getData(`${BASE_URL}/trips`)
         })
         .catch((err) => {
-            console.log(err.response.data.message)
+            alert(err.response.data.message)
         })
     }
     
     const listTrip = trips.trips ? trips.trips.map((trip) => {
         return (
-                <div key={trip.id}>
-                    <div onClick={() => goToTripDetails(history, trip.id)}>
-                        <p>Nome: {trip.name}</p>
-                        <p>Esse card vai ser clicável</p>
-                    </div>
-                    <IconButton aria-label="delete" value={trip.id} onClick={onClickDelete}>
-                        <DeleteIcon/>
-                    </IconButton>
-                    <hr/>
-                </div>
+                <MainContainer key={trip.id}>
+                    <CardContainer>
+                        <div onClick={() => goToTripDetails(history, trip.id)}>
+                            <strong><p> {trip.name}</p></strong>
+                        </div>
+                    </CardContainer>
+                        <div>
+                        <IconButton aria-label="delete" value={trip.id} onClick={onClickDelete}>
+                            <DeleteIcon/>
+                        </IconButton>
+                        </div>
+
+                </MainContainer>
             )
-    }) : <h2>Carregando...</h2>
+    }) : <Container><h2>Carregando...</h2></Container>
     return (
         <div>
             {listTrip}

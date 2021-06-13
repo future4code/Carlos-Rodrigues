@@ -1,13 +1,9 @@
-import styled from 'styled-components';
 import React from 'react';
-
-export const Select = styled.select `
-	width: 20vw;
-`
+import {SelectContainer} from './styled'
 export default function CountriesList(props) {
 
 	return (
-		<select id="paises" onChange={props.onChange} name={props.name}>
+		<SelectContainer id="paises" onChange={props.onChange} name={props.name}>
 			<option value="" defaultValue>Selecione seu país</option>
 			<option value="Afeganistão">Afeganistão</option>
 			<option value="África do Sul">África do Sul</option>
@@ -259,6 +255,6 @@ export default function CountriesList(props) {
 			<option value="Wallis e Futuna">Wallis e Futuna</option>
 			<option value="Zimbabwe">Zimbabwe</option>
 			<option value="Zâmbia">Zâmbia</option>
-		</select>
+		</SelectContainer>
 	)
 }

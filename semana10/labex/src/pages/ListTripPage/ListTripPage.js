@@ -1,17 +1,20 @@
 import React from 'react'
 import CardTrip from '../../components/CardTrip/CardTrip';
 import ButtonHome from '../../components/ButtonHome/ButtonHome'
+import { MainContainer, TopContainer } from './styled';
 
 
 export default function ListTrip() {
     
     return (
     
-        <div>
-            <ButtonHome/>
-            <h1>ListTrip</h1>
+        <MainContainer>
+            <TopContainer>
+                <ButtonHome/>
+                <h1>Escolha seu próximo destino!</h1>
+            </TopContainer>
             <hr/>
             <CardTrip/>
-        </div>
+        </MainContainer>
     )
 }

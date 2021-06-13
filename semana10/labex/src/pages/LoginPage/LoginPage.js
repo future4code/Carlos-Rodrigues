@@ -9,7 +9,7 @@ import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import LockIcon from '@material-ui/icons/Lock';
-import Button from '@material-ui/core/Button';
+import {LoginButton, LoginContainer, MainContainer, TopContainer} from './styled'
 
 
 
@@ -35,41 +35,44 @@ export default function LoginPage() {
         })
     }
     return (
-        <div>
-            <ButtonHome/>
-            <h1>LoginPage</h1>
+        <MainContainer>
+            <TopContainer>
+                <ButtonHome/>
+                <h1>Login</h1>
+            </TopContainer>
             <form onSubmit={onClickLogin}>
-                <Input
-                    name="email"
-                    value={form.email} 
-                    onChange={onChange}
-                    type="email" 
-                    placeholder="E-mail"
-                    required
-                    startAdornment={
-                        <InputAdornment position="start">
-                          <AccountCircle/>
-                        </InputAdornment>
-                    }
-                />
-                <Input
-                    name="password"
-                    value={form.password} 
-                    onChange={onChange}
-                    type="password"
-                    placeholder="Senha"
-                    required
-                    pattern={"^.{6,}"}
-                    title={"Sua senha deve possuir no mínimo 6 caracteres."}
-                    startAdornment={
-                        <InputAdornment position="start">
-                          <LockIcon/>
-                        </InputAdornment>
-                    }
-                />
-                <button >Entrar</button>
+                <LoginContainer>
+                    <Input
+                        name="email"
+                        value={form.email} 
+                        onChange={onChange}
+                        type="email" 
+                        placeholder="E-mail"
+                        required
+                        startAdornment={
+                            <InputAdornment position="start">
+                            <AccountCircle/>
+                            </InputAdornment>
+                        }
+                    />
+                    <Input
+                        name="password"
+                        value={form.password} 
+                        onChange={onChange}
+                        type="password"
+                        placeholder="Senha"
+                        required
+                        pattern={"^.{6,}"}
+                        title={"Sua senha deve possuir no mínimo 6 caracteres."}
+                        startAdornment={
+                            <InputAdornment position="start">
+                            <LockIcon/>
+                            </InputAdornment>
+                        }
+                    />
+                    <LoginButton>ENTRAR</LoginButton>
+                </LoginContainer>
             </form>
-            <hr/>
-        </div>
+        </MainContainer>
     )
 }

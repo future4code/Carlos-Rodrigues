@@ -8,6 +8,8 @@ import { header } from '../../constants/header';
 import CountriesList from '../../components/CountriesList/CountriesList';
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
 import TextField from '@material-ui/core/TextField';
+import {FormContainer, MainContainer, SendButton, TopContainer} from './styled'
+import { Container } from '@material-ui/core';
 
 export default function ApplicationFormPage() {
 
@@ -19,9 +21,9 @@ export default function ApplicationFormPage() {
 
     const listTrip = trips.trips ? trips.trips.map((trip) => {
         if (trip.id === params.id) {
-            return <h2 key={trip.id}>{trip.name}</h2>
+            return <Container><h2 key={trip.id}>{trip.name}</h2></Container>
         } return false
-    }) : <h2>Carregando...</h2>
+    }) : <Container><h2>Carregando...</h2></Container>
     
     
     const onClickSend = (e) => {
@@ -37,11 +39,14 @@ export default function ApplicationFormPage() {
         })
     }
     return (
-        <div>
-            <ButtonBack/>
-            <h1>ApplicationFormPage</h1>
+        <MainContainer>
+            <TopContainer>
+                <ButtonBack/>
+                <h1>Formulário de aplicação</h1>
+            </TopContainer>
             {listTrip}
             <form onSubmit={onClickSend}>
+            <FormContainer>
                 <TextField
                     variant="outlined" 
                     label="Nome"
@@ -83,9 +88,10 @@ export default function ApplicationFormPage() {
                     required
                 />
                 <CountriesList name="country" onChange={onChange}/>
-                <button>Enviar</button>
+                
+                <SendButton>Enviar</SendButton>
+            </FormContainer>
             </form>
-            <hr/>
-        </div>
+        </MainContainer>
     )
 }

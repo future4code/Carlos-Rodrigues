@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import {BASE_URL } from '../../constants/url';
 import axios from 'axios';
-import {header} from '../../constants/header'
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
 import { Button } from '@material-ui/core';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
+import { MainContainer, TopContainer, DetailsContainer, TripContainer, Candidates, Approved, ButtonsContainer, White } from './styled';
 
 export default function TripDetailsPage() {
     const params = useParams()
@@ -17,6 +17,11 @@ export default function TripDetailsPage() {
         getTripDetails()
     }, [params.id, setTrip])
     
+    const header = {
+        headers : {
+            auth: localStorage.getItem("token")
+        }
+    }
     
     const getTripDetails = () => {
 
@@ -43,33 +48,48 @@ export default function TripDetailsPage() {
             alert(err.response.data.message)
         })
     }
-         
+
     return (
-        <div>
-            <ButtonBack/>
-            <h1>TripDetailsPage</h1>
-            <p>Nome viagem: </p>
-            <p>Descrição</p>
-            <p>Data</p>
-            <div>
-                <h2>Candidatos Pendentes</h2>
-                {trip.candidates && trip.candidates.map((candidate) => {
-                    return (
-                        <div key={candidate.id}>
-                            <p>{candidate.name}</p>
-                            <Button variant="contained" color="primary" endIcon={<ThumbUpIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</Button>
-                            <Button variant="contained" color="primary" endIcon={<ThumbDownIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, false)}>Recusar</Button>
-                        </div>
-                    )
-                })}
-            </div>
-            <div>
-                <h2>Candidatos Aprovados</h2>
-                {trip.approved ? trip.approved.map((candidate) => {
-                    return <p key={candidate.id}>{candidate.name}</p>
-                }) : <p>Nenhum candidato</p>}
-            </div>
-        </div>
+        <MainContainer>
+            <White>
+            <TopContainer>
+                <ButtonBack/>
+                <h1>TripDetailsPage</h1>
+            </TopContainer>
+            <DetailsContainer>
+
+                <TripContainer>
+                <p><strong>Nome:</strong> {trip && trip.name}</p>
+                <p><strong>Descrição:</strong> {trip && trip.description}</p>
+                <p><strong>Data:</strong> {trip && trip.date}</p>
+                <p><strong>Duração:</strong> {trip && trip.durationInDays} dias</p>
+                <hr/>
+                </TripContainer>
+
+                <Candidates>
+                    <h2>Candidatos Pendentes</h2>
+                    {trip.candidates && trip.candidates.map((candidate) => {
+                        return (
+                            <div key={candidate.id}>
+                                <p>{candidate.name}</p>
+                                <ButtonsContainer>
+                                    <Button variant="contained" color="primary" endIcon={<ThumbUpIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</Button>
+                                    <Button variant="contained" color="primary" endIcon={<ThumbDownIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, false)}>Recusar</Button>
+                                </ButtonsContainer>
+                            </div>
+                        )
+                    })}
+                    <hr/>
+                </Candidates>
+                <Approved>
+                    <h2>Candidatos Aprovados</h2>
+                    {trip.approved ? trip.approved.map((candidate) => {
+                        return <p key={candidate.id}>{candidate.name}</p>
+                    }) : <p>Nenhum candidato</p>}
+                </Approved>
+            </DetailsContainer>
+        </White>
+        </MainContainer>
     )
 }
 
