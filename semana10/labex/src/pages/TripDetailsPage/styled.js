@@ -5,6 +5,10 @@ export const MainContainer = styled.div `
     background-image: url(${ceu});
     background-size: cover;
     height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 `
 export const White = styled.div `
     background-color: rgb(255, 255, 255, 0.1);

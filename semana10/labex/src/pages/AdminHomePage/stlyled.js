@@ -9,6 +9,10 @@ export const Header = styled.div `
 export const MainContainer = styled.div `
     background-image: url(${ceu});
     background-size: cover;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 `
 export const TopContainer = styled.div `
     display: flex;

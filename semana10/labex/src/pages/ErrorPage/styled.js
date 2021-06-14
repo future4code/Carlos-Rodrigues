@@ -9,4 +9,8 @@ export const MainContainer = styled.div `
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 `
