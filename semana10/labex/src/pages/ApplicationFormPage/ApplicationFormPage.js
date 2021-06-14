@@ -7,8 +7,7 @@ import axios from 'axios';
 import { header } from '../../constants/header';
 import CountriesList from '../../components/CountriesList/CountriesList';
 import ButtonBack from '../../components/ButtonBack/ButtonBack';
-import TextField from '@material-ui/core/TextField';
-import {FormContainer, MainContainer, SendButton, TopContainer} from './styled'
+import {FormContainer, MainContainer, SendButton, TopContainer, InputContainer} from './styled'
 import { Container } from '@material-ui/core';
 
 export default function ApplicationFormPage() {
@@ -47,9 +46,9 @@ export default function ApplicationFormPage() {
             {listTrip}
             <form onSubmit={onClickSend}>
             <FormContainer>
-                <TextField
+                <InputContainer
                     variant="outlined" 
-                    label="Nome"
+                    placeholder="Nome"
                     type="name"
                     value={form.name}
                     onChange={onChange}
@@ -57,9 +56,9 @@ export default function ApplicationFormPage() {
                     name="name"
                     required
                 />
-                <TextField
+                <InputContainer
                     variant="outlined"
-                    label="Idade"
+                    placeholder="Idade"
                     type="number"
                     value={form.age}
                     onChange={onChange}
@@ -67,9 +66,9 @@ export default function ApplicationFormPage() {
                     name="age"
                     required
                 />
-                <TextField
+                <InputContainer
                     variant="outlined"
-                    label="Profissão"
+                    placeholder="Profissão"
                     type="text"
                     name="profession"
                     value={form.profession}
@@ -77,9 +76,9 @@ export default function ApplicationFormPage() {
                     pattern={"^.{8,}"}
                     required
                 />
-                <TextField
+                <InputContainer
                     variant="outlined" 
-                    label="Texto de candidatura"
+                    placeholder="Texto de candidatura"
                     type="text"
                     name="applicationText"
                     value={form.applicationText}

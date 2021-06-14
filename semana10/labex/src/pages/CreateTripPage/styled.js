@@ -7,20 +7,12 @@ export const MainContainer = styled.div `
     height: 100vh;
 `
 export const TopContainer = styled.div `
-    display: flex; 
-    justify-content: space-between;
-    width: 65%;
-`
-
-export const FormContainer = styled.div `
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    height: 70vh;
+    margin-left: 5vw;
+    width: 53%;
 `
-
-export const SendButton = styled.button `
+export const CreateButton = styled.button `
     background-color: #3F51B5;
     color: white;
     height: 5vh;
@@ -31,7 +23,22 @@ export const SendButton = styled.button `
     :hover {
         background-color: #303F9F
     }
-    margin-bottom: 5vh;
+`
+export const FormContainer = styled.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+    margin-top: 10vh;
+`
+
+export const SelectContainer = styled.select `
+    background-color: rgb(255, 255, 255, 0.3);
+    width: 15%;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
 `
 
 export const InputContainer = styled.input `
@@ -40,5 +47,4 @@ export const InputContainer = styled.input `
     height: 5vh;
     border: none;
     border-radius: 5px;
-    outline: none;
 `

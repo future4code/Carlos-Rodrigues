@@ -6,7 +6,7 @@ import ButtonBack from '../../components/ButtonBack/ButtonBack';
 import { Button } from '@material-ui/core';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
-import { MainContainer, TopContainer, DetailsContainer, TripContainer, Candidates, Approved, ButtonsContainer, White } from './styled';
+import { MainContainer, TopContainer, DetailsContainer, TripContainer, Candidates, Approved, ButtonsContainer, White, CandidatesContainer } from './styled';
 
 export default function TripDetailsPage() {
     const params = useParams()
@@ -54,7 +54,7 @@ export default function TripDetailsPage() {
             <White>
             <TopContainer>
                 <ButtonBack/>
-                <h1>TripDetailsPage</h1>
+                <h1>Detalhes da viagem</h1>
             </TopContainer>
             <DetailsContainer>
 
@@ -70,13 +70,13 @@ export default function TripDetailsPage() {
                     <h2>Candidatos Pendentes</h2>
                     {trip.candidates && trip.candidates.map((candidate) => {
                         return (
-                            <div key={candidate.id}>
+                            <CandidatesContainer key={candidate.id}>
                                 <p>{candidate.name}</p>
                                 <ButtonsContainer>
-                                    <Button variant="contained" color="primary" endIcon={<ThumbUpIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</Button>
-                                    <Button variant="contained" color="primary" endIcon={<ThumbDownIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, false)}>Recusar</Button>
+                                    <Button size="small" variant="contained" color="primary" endIcon={<ThumbUpIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, true)}>Aprovar</Button>
+                                    <Button size="small" variant="contained" color="primary" endIcon={<ThumbDownIcon/>} onClick={() => onClickApprove(trip.id, candidate.id, false)}>Recusar</Button>
                                 </ButtonsContainer>
-                            </div>
+                            </CandidatesContainer>
                         )
                     })}
                     <hr/>

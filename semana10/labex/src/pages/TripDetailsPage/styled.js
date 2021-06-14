@@ -7,7 +7,7 @@ export const MainContainer = styled.div `
     height: 100vh;
 `
 export const White = styled.div `
-    background-color: rgb(255, 255, 255, 0.3);
+    background-color: rgb(255, 255, 255, 0.1);
     height: 100vh;
 `
 export const TopContainer = styled.div `
@@ -23,6 +23,7 @@ export const DetailsContainer = styled.div `
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-top: 5vh;
 `
 
 export const TripContainer = styled.div `
@@ -32,13 +33,22 @@ export const TripContainer = styled.div `
 export const Candidates = styled.div `
     width: 40%;
     text-align: center;
+    margin-top: 5vh;
 `
 export const ButtonsContainer = styled.div `
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    width: 50%;
 `
 export const Approved = styled.div `
     width: 40%;
     text-align: center;
     margin-top: 5vh;
+`
+export const CandidatesContainer = styled.div `
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
 `

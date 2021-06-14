@@ -4,6 +4,7 @@ import useForm from '../../hooks/useForm';
 import axios from 'axios';
 import { header } from '../../constants/header';
 import ButtonBack from '../../components/ButtonBack/ButtonBack'
+import { CreateButton, FormContainer, InputContainer, MainContainer, SelectContainer, TopContainer } from './styled';
 
 export default function CreateTripPage() {
 
@@ -34,61 +35,64 @@ export default function CreateTripPage() {
     }
     
     return (
-        <div>
-            <ButtonBack/>
+        <MainContainer>
+            <TopContainer>
+                <ButtonBack/>
+                <h1>Crie sua viagem ! </h1>
+            </TopContainer>
             <form onSubmit={onClickCreate}>
-                <h1>CreateTripPage</h1>
-                <input 
-                    placeholder="Nome da viagem" 
-                    type="text"
-                    name="name"
-                    value={form.name}
-                    onChange={onChange}
-                    pattern={"^[A-Za-záàâãéèêíïóôõöúçñ ]{5,}$"}
-                    required
-                />
-                <select name="planet" value={form.planet} onChange={onChange}>
-                    <option>Qual o planeta de destino ?</option>
-                    <option>Júpiter</option>
-                    <option>Marte</option>
-                    <option>Mercúrio</option>
-                    <option>Netuno</option>
-                    <option>Plutão</option>
-                    <option>Saturno</option>
-                    <option>Urano</option>
-                    <option>Vênus</option>
-                </select>
-                <input 
-                    placeholder="Data de partida" 
-                    type="date"
-                    name="date"
-                    value={form.date}
-                    onChange={onChange}
-                    required
-                    min={data()}
-                />
-                <input
-                    placeholder="Duração em dias"
-                    type="number"
-                    name="durationInDays"
-                    value={form.durationInDays}
-                    onChange={onChange}
-                    required
-                    min={50}
-        
-                />
-                <input
-                    placeholder="Descrição"
-                    type="text"
-                    name="description"
-                    value={form.description}
-                    onChange={onChange}
-                    required
-                    pattern={"^.{30,}"}
-                />
-                <button>Criar</button>
+                <FormContainer>
+                    <InputContainer 
+                        placeholder="Nome da viagem" 
+                        type="text"
+                        name="name"
+                        value={form.name}
+                        onChange={onChange}
+                        pattern={"^[A-Za-záàâãéèêíïóôõöúçñ ]{5,}$"}
+                        required
+                    />
+                    <SelectContainer name="planet" value={form.planet} onChange={onChange}>
+                        <option>Qual o planeta de destino ?</option>
+                        <option>Júpiter</option>
+                        <option>Marte</option>
+                        <option>Mercúrio</option>
+                        <option>Netuno</option>
+                        <option>Plutão</option>
+                        <option>Saturno</option>
+                        <option>Urano</option>
+                        <option>Vênus</option>
+                    </SelectContainer>
+                    <InputContainer 
+                        placeholder="Data de partida" 
+                        type="date"
+                        name="date"
+                        value={form.date}
+                        onChange={onChange}
+                        required
+                        min={data()}
+                    />
+                    <InputContainer
+                        placeholder="Duração em dias"
+                        type="number"
+                        name="durationInDays"
+                        value={form.durationInDays}
+                        onChange={onChange}
+                        required
+                        min={50}
+            
+                    />
+                    <InputContainer
+                        placeholder="Descrição"
+                        type="text"
+                        name="description"
+                        value={form.description}
+                        onChange={onChange}
+                        required
+                        pattern={"^.{30,}"}
+                    />
+                    <CreateButton>Criar</CreateButton>
+                </FormContainer>
             </form>
-            <hr/>
-        </div>
+        </MainContainer>
     )
 }

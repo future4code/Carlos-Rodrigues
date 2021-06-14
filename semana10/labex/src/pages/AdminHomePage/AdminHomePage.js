@@ -5,7 +5,7 @@ import { goToCreateTrip} from "../../routes/coordinator";
 import AdminCardTrip from '../../components/AdminCardTrip/AdminCardTrip'
 import ButtonHome from '../../components/ButtonHome/ButtonHome';
 import { Button, Container } from "@material-ui/core";
-import {ButtonContainer, Header, MainContainer, TopContainer, White} from './stlyled'
+import {ButtonContainer, MainContainer, TopContainer, White} from './stlyled'
 
 export default function AdminHomePage() {
     const history = useHistory();
@@ -20,7 +20,6 @@ export default function AdminHomePage() {
         
             <MainContainer>
                 <White>
-                    {/* <Header> */}
                         <TopContainer>
                             <ButtonHome/>
                             <h1>Página do administrador</h1>
@@ -29,8 +28,6 @@ export default function AdminHomePage() {
                             <Button size="small" variant="contained" color="primary" onClick={() => goToCreateTrip(history)}>Nova viagem</Button>
                             <Button size="small" variant="contained" color="primary" onClick={onClickLogout}>Logout</Button>
                         </ButtonContainer>
-                    {/* </Header> */}
-
                     <Container>
                         <h3>Suas viagens</h3>
                     </Container>

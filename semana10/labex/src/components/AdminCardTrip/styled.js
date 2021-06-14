@@ -15,6 +15,15 @@ export const MainContainer = styled.div `
     justify-content: center;
     align-items: center;
 `
-export const Card = styled.div `
-    width: 50%;
+
+export const DeleteButton = styled.button `
+    background: none;
+    color: black;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    :hover {
+        background-color: #303F9F
+    }
 `

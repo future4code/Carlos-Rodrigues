@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { goToListTrip, goToLogin } from '../../routes/coordinator';
 import Button from '@material-ui/core/Button'
-import { HomeButtonContainer, HomeContainer, MainContainer, White } from './styled';
+import { HomeButtonContainer, HomeContainer, MainContainer } from './styled';
 import { Container } from "@material-ui/core";
 
 

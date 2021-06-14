@@ -4,10 +4,9 @@ import { useHistory } from 'react-router';
 import useRequestData from '../../hooks/useRequestData';
 import { goToTripDetails } from '../../routes/coordinator';
 import axios from 'axios';
-import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Container } from '@material-ui/core';
-import { CardContainer, Card, MainContainer } from './styled';
+import { CardContainer, MainContainer, DeleteButton } from './styled';
 
 export default function AdminCardTrip() {
 
@@ -24,8 +23,8 @@ export default function AdminCardTrip() {
         const id = (e.target.value)
 
         axios.delete(`${BASE_URL}/trips/${id}`, header)
-        .then((res) => {
-            console.log(res)
+        .then(() => {
+            alert("Viagem removida!")
             getData(`${BASE_URL}/trips`)
         })
         .catch((err) => {
@@ -42,9 +41,9 @@ export default function AdminCardTrip() {
                         </div>
                     </CardContainer>
                         <div>
-                        <IconButton aria-label="delete" value={trip.id} onClick={onClickDelete}>
+                        <DeleteButton value={trip.id} onClick={onClickDelete}>
                             <DeleteIcon/>
-                        </IconButton>
+                        </DeleteButton>
                         </div>
 
                 </MainContainer>
