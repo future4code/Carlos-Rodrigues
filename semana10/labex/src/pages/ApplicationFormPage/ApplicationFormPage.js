@@ -27,7 +27,7 @@ export default function ApplicationFormPage() {
     
     const onClickSend = (e) => {
         e.preventDefault()
-        console.log(form)
+        
         axios.post(`${BASE_URL}/trips/${params.id}/apply`, form, header)
         .then(() => {
             alert("Inscrição realizada !")
