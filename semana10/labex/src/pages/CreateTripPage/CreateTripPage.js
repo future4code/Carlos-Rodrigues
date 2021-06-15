@@ -22,8 +22,6 @@ export default function CreateTripPage() {
     const onClickCreate = (e) => {
         e.preventDefault()
 
-        console.log(form)
-
         axios.post(`${BASE_URL}/trips`, form, header)
         .then(() => {
             cleanFields()
