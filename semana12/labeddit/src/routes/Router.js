@@ -12,6 +12,7 @@ export default function Router() {
     return (
 
         <BrowserRouter>
+            
             <Switch>
                 <Route exact path="/">
                     <HomePage/>
@@ -29,7 +30,7 @@ export default function Router() {
                     <FeedPage/>
                 </Route>
                 
-                <Route exact path="/post">
+                <Route exact path="/post/:id">
                     <PostPage/>
                 </Route>
 

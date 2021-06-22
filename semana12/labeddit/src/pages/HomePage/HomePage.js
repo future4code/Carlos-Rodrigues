@@ -1,18 +1,14 @@
 import React from 'react'
-import { useHistory } from 'react-router-dom'
-import { goToLogin, goToSignUp } from '../../routes/coordinator'
+import Header from '../../components/Header/Header'
 
 export default function HomePage() {
-const history = useHistory()
+    
 
     return (
         <div>
-            <div>
-                <h2>LabEddit</h2>
-                <button onClick={() => goToSignUp(history)}>Cadastre-se</button>
-                <button onClick={() => goToLogin(history)}>Login</button>
-            </div> 
-
+            <Header 
+                title={"home"}
+            />
             <div>
                 <p>Conteúdo</p>
             </div>
