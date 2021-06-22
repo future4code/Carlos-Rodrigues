@@ -1,30 +1,17 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import useForm from '../../hooks/useForm'
+import LoginForm from '../../components/LoginForm/LoginForm';
+import useUnprotectedPage from '../../hooks/useUnprotectedPage';
 
 export default function LoginPage() {
-    const [form, onChange, clear] = useForm({email:"",  password:""})
     
+    useUnprotectedPage()
     return (
         <div>
             <Header 
                 title={"login"}
             />
-
-            <form>
-                <input 
-                    placeholder="E-mail"
-                    name={"email"}
-                    value={form.email}
-                />
-                <input 
-                    placeholder="Senha"
-                    name={"password"}
-                    value={form.password}
-                />
-
-                <button>Entrar</button>
-            </form>
+                <LoginForm/>
         </div>
     )
 }
