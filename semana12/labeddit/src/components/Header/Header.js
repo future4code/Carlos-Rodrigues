@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import { goToSignUp, goToLogin, goBack, goToHome} from '../../routes/coordinator';
 import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
@@ -37,7 +37,6 @@ export default function Header({title}) {
         } else if (title === "feed" || title === "post") {
             return (
                 <div>
-                    Nome do usuário
                     <StyledButton color="inherit" onClick={() => onClickLogout(history)}>Logout</StyledButton>
                 </div>
             )

@@ -13,3 +13,15 @@ export const login = (body, clear, history) => {
         clear()
     })
 }
+
+export const signup = (body, history) => {
+
+    axios.post(`${BASE_URL}/users/signup`, body)
+    .then((res) => {
+        localStorage.setItem("token", res.data.token)
+        history.push("/feed")
+    })
+    .catch((err) => {
+        alert(err.response.data.message)
+    })
+}

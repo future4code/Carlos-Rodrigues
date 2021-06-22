@@ -7,15 +7,16 @@ import useForm from '../../hooks/useForm'
 import { makeStyles } from '@material-ui/core';
 import { Button, TextField } from '@material-ui/core';
 import { SignUpContainer } from './styled';
+import { signup } from '../../services/users';
+import { useHistory } from 'react-router-dom';
 
 export default function SignUpForm() {
-
-
+    const history = useHistory()
     const [form, onChange] = useForm({username: "", email:"",  password:""})
 
     const onSubmitSignUp = (e) => {
         e.preventDefault()
-        console.log(form)
+        signup(form, history)
     }
 
     const useStyles = makeStyles(theme => ({
