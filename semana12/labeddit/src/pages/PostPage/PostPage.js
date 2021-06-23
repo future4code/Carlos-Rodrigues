@@ -11,6 +11,7 @@ export default function PostPage() {
             <Header
                 title={"post"}
             />
+
         </div>
     )
 }
