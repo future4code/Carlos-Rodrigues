@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import {primaryColor, secondaryColor, neutralColor, thirdColor } from './colors'
+import {primaryColor, secondaryColor, thirdColor } from './colors'
 
 const theme = createMuiTheme({
 
@@ -18,9 +18,9 @@ const theme = createMuiTheme({
     info: {
       main: thirdColor,
     },
-    // text: {
-    //     primary: neutralColor
-    // }
+    text: {
+        primary: "rgb(0, 0, 0)",
+    }
   },
 });
 
