@@ -17,6 +17,7 @@ export const StyledCard = styled(Card) `
     min-height: 30vh;
     box-shadow: 3px 3px 3px 3px;
     background-color: ${cardColor};
+    margin-bottom: 2vh;
 `
 
 export const StyledContent = styled(CardContent) `

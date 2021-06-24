@@ -10,13 +10,42 @@ import { StyledCard, StyledContent, StyledActions, UserContainer } from './style
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import PersonIcon from '@material-ui/icons/Person';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
+import useForm from '../../hooks/useForm'
+import { createComment } from '../../services/posts'
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    padding: '2px 4px',
+    display: 'flex',
+    alignItems: 'center',
+  },
+  input: {
+    marginLeft: theme.spacing(1),
+    flex: 1,
+  },
+  iconButton: {
+    padding: 10,
+  },
+}));
 
 export default function PostDetail() {
-    const params = useParams()
 
+    const classes = useStyles();
+    const params = useParams()
     const postComments = useRequestData(`${BASE_URL}/posts/${params.id}/comments`, [])
-    console.log("detail", postComments)
-    const comments = postComments[0].map((comment) => {
+    const [form, onChange, clear] = useForm({body: ""})
+
+    const onSubmitComment = (e) => {
+        e.preventDefault()
+        createComment(form, params.id, clear, postComments.getData)
+    }
+    console.log(postComments)
+
+    const comments = postComments.data.map((comment) => {
         return (
             <CommentContainer>
                 <StyledCard>
@@ -52,12 +81,25 @@ export default function PostDetail() {
     })
     return (
         <div>
-            <TextField
+            {/* <TextField
                 fullWidth
                 label="Comentário"
                 variant="outlined"
                 margin="normal"
-            />
+            /> */}
+            <Paper component="form" className={classes.root} onSubmit={onSubmitComment}>
+                <InputBase fullWidth
+                    className={classes.input}
+                    placeholder="Comentário"
+                    name={"body"}
+                    value={form.body}
+                    onChange={onChange}
+                    
+                />
+                <IconButton type="submit" className={classes.iconButton}>
+                    <MessageOutlinedIcon />
+                </IconButton>
+                </Paper>
             {comments}
         </div>
     )

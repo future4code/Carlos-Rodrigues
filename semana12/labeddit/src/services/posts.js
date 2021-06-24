@@ -31,3 +31,16 @@ export const createPost = (body, clear, setPosts) => {
         }
     })
 }
+
+export const createComment = (body, id, clear, getData) => {
+
+    axios.post(`${BASE_URL}/posts/${id}/comments`, body, {headers: {Authorization: token}})
+    .then((res) => {
+        console.log(res)
+        clear()
+        getData()
+    })
+    .catch((err) => {
+        console.log(err.response)
+    }) 
+}
