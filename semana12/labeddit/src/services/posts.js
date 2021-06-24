@@ -24,6 +24,10 @@ export const createPost = (body, clear, setPosts) => {
         getPosts(setPosts)
     })
     .catch((err) => {
-        alert(err.response.message)
+        if (err.response.data.message === "Erro ao validar os seguintes parâmetros: ") {
+            alert("Preencha todos os campos para criar um post.")
+        } else {
+            alert(err.response.data.message)
+        }
     })
 }

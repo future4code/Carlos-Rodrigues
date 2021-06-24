@@ -45,3 +45,9 @@ export const UserContainer = styled.div `
     justify-content: flex-start;
     align-items: center;
 `
+
+export const CommentContainer = styled.div `
+    opacity: 0.8;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+`

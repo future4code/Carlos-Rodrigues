@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import useProtectedPage from '../../hooks/useProtectedPage';
 import PostDetail from '../../components/PostDetail/PostDetail';
 import PostComments from '../../components/PostDetail/PostComments'
+import { DetailsContainer } from './styled';
 
 export default function PostPage() {
     
@@ -13,8 +14,10 @@ export default function PostPage() {
             <Header
                 title={"post"}
             />
-            <PostDetail/>
-            {/* <PostComments/> */}
+            <DetailsContainer>
+                <PostDetail/>
+                <PostComments/>
+            </DetailsContainer>
         </div>
     )
 }

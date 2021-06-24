@@ -1,11 +1,8 @@
 import React, { useContext } from 'react';
-import useRequestData from '../../hooks/useRequestData'
-import { BASE_URL } from '../../constants/urls';
 import { ButtonContainer, PostContainer } from './styled';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { cardColor, primaryColor, secondaryColor, thirdColor } from '../../constants/colors';
 import { StyledCard, StyledContent, StyledActions, UserContainer } from './styled';
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
@@ -15,34 +12,17 @@ import { useHistory } from 'react-router-dom';
 import GlobalStateContext from '../../global/GlobalStateContext';
 
 
-const useStyles = makeStyles({
-    root: {
-      minWidth: 275,
-      background: cardColor,
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
-    },
-    title: {
-      fontSize: 14,
-    },
-  });
 
   export default function PostCard() {
       
     const history = useHistory()
-    const classes = useStyles()
     const {posts} = useContext(GlobalStateContext)
 
     const postInfo = posts.map((post) => {
-        console.log("post map", post)
         return (
             <PostContainer>
                 <StyledCard 
                     key={post.id}
-                    className={classes.root}
                     onClick={() => goToPost(history, post.id)}
                 >
                     <StyledContent>
