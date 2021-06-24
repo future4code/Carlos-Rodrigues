@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import useProtectedPage from '../../hooks/useProtectedPage';
-import PostDetail from '../../components/PostDetail/PostDetail'
+import PostDetail from '../../components/PostDetail/PostDetail';
+import PostComments from '../../components/PostDetail/PostComments'
 
 export default function PostPage() {
     
@@ -13,6 +14,7 @@ export default function PostPage() {
                 title={"post"}
             />
             <PostDetail/>
+            {/* <PostComments/> */}
         </div>
     )
 }

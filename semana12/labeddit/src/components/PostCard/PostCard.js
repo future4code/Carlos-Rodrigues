@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import useRequestData from '../../hooks/useRequestData'
 import { BASE_URL } from '../../constants/urls';
 import { ButtonContainer, PostContainer } from './styled';
@@ -12,6 +12,7 @@ import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import PersonIcon from '@material-ui/icons/Person';
 import { goToPost } from '../../routes/coordinator';
 import { useHistory } from 'react-router-dom';
+import GlobalStateContext from '../../global/GlobalStateContext';
 
 
 const useStyles = makeStyles({
@@ -33,9 +34,10 @@ const useStyles = makeStyles({
       
     const history = useHistory()
     const classes = useStyles()
-    const postList = useRequestData(`${BASE_URL}/posts`, [])
-    const postInfo = postList[0].map((post) => {
-        console.log(post)
+    const {posts} = useContext(GlobalStateContext)
+
+    const postInfo = posts.map((post) => {
+        console.log("post map", post)
         return (
             <PostContainer>
                 <StyledCard 

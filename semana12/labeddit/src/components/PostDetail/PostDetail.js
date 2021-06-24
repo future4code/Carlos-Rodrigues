@@ -1,17 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../../constants/urls'
+import GlobalStateContext from '../../global/GlobalStateContext'
 import useRequestData from '../../hooks/useRequestData'
 
 export default function PostDetail() {
     const params = useParams()
-    console.log(params)
+    const {posts} = useContext(GlobalStateContext)
 
-    const postDetail = useRequestData(`${BASE_URL}/posts/${params.id}/comments`, [])
-    console.log("detail", postDetail)
     return (
         <div>
-
+            {posts.filter((item) => {
+            if (params.id === item.id) {
+                return true
+            } return false
+        }).map((post) => {
+            return (
+                <div key={post.id}>
+                    <p>{post.title}</p>
+                    <p>{post.body}</p>
+                </div>
+            )
+        })}
         </div>
     )
 }

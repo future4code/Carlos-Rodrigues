@@ -1,28 +1,27 @@
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { TextField } from '@material-ui/core';
 import {CreateContainer, StyledField} from './styled'
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import useForm from '../../hooks/useForm';
 import { createPost } from '../../services/posts';
+import GlobalStateContext from '../../global/GlobalStateContext';
 
 
 export default function CreatePost() {
 
     const [form, onChange, clear] = useForm({title:"",  body:""})
-
-
+    const {setPosts} = useContext(GlobalStateContext)
     const useStyles = makeStyles(theme => ({
         root: {
           background: theme.palette.info.main
         }
       }));
-
     const classes = useStyles();
 
     const onSubmitPost = (e) => {
         e.preventDefault()
-        createPost(form, clear)
+        createPost(form, clear, setPosts)
     }
 
     return (

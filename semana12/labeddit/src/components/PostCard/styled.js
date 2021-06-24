@@ -14,13 +14,16 @@ export const StyledCard = styled(Card) `
     flex-direction: column;
     justify-content: space-between;
     min-height: 30vh;
+    box-shadow: 3px 3px 3px 3px;
 `
 
 export const StyledContent = styled(CardContent) `
     min-height: 22vh;
+    max-width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    box-shadow: 1px 1px 1px 1px;
 `
 export const StyledActions = styled(CardActions) `
     display: flex;
