@@ -2,20 +2,24 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { BASE_URL } from '../../constants/urls'
 import useRequestData from '../../hooks/useRequestData'
-import { TextField } from '@material-ui/core'
 import { CommentContainer, ButtonContainer } from './styled'
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import { StyledCard, StyledContent, StyledActions, UserContainer } from './styled';
+import { StyledCard, StyledContent, StyledActions, UserContainer, VotesContainer } from './styled';
 import ThumbUpAltOutlinedIcon from '@material-ui/icons/ThumbUpAltOutlined';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
+import ThumbDownAltIcon from '@material-ui/icons/ThumbDownAlt';
 import PersonIcon from '@material-ui/icons/Person';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import InputBase from '@material-ui/core/InputBase';
-import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
+import SendIcon from '@material-ui/icons/Send';
 import useForm from '../../hooks/useForm'
-import { createComment } from '../../services/posts'
+import { changeVoteComment, createComment, createVoteComment, deleteVoteComment } from '../../services/posts'
+import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
+import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,11 +47,20 @@ export default function PostDetail() {
         e.preventDefault()
         createComment(form, params.id, clear, postComments.getData)
     }
-    console.log(postComments)
+
+    const onClickVoteComment = (direction, id, getData, userVote) => {
+        if (userVote === null) {
+            createVoteComment(direction, id, getData)
+        } else if (userVote !== null && direction !== userVote) {
+            changeVoteComment(direction, id, getData)
+        } else if (userVote !== null && direction === userVote) {
+            deleteVoteComment(id, getData)
+        }
+    }
 
     const comments = postComments.data.map((comment) => {
         return (
-            <CommentContainer>
+            <CommentContainer key={comment.id}>
                 <StyledCard>
                     <StyledContent>
                         <UserContainer>
@@ -62,17 +75,17 @@ export default function PostDetail() {
 
                     <StyledActions>
                         <ButtonContainer>
-                            <IconButton size="small" color="primary">
-                                <ThumbUpAltOutlinedIcon/>
+                            <IconButton size="small" color="primary" onClick={() => onClickVoteComment(1, comment.id, postComments.getData, comment.userVote)}>
+                                {comment.userVote !== null && comment.userVote > 0 ? <ThumbUpAltIcon/> : <ThumbUpAltOutlinedIcon/>}
                             </IconButton>
 
-                            <IconButton size="small" color="primary">
-                                <ThumbDownOutlinedIcon/>
+                            <IconButton size="small" color="primary" onClick={() => onClickVoteComment(-1, comment.id, postComments.getData, comment.userVote)}>
+                                {comment.userVote !== null && comment.userVote < 0 ? <ThumbDownAltIcon/> : <ThumbDownOutlinedIcon/>}
                             </IconButton>
+
                         </ButtonContainer>
-
                         <div>
-                            
+                                {comment.voteSum !== null ? (comment.voteSum > 0 ? <VotesContainer><InsertEmoticonIcon/> {comment.voteSum}</VotesContainer> : <VotesContainer><SentimentVeryDissatisfiedIcon/> {comment.voteSum}</VotesContainer>) : <VotesContainer><SentimentDissatisfiedIcon/>0</VotesContainer> }
                         </div>
                     </StyledActions>
                 </StyledCard>
@@ -81,12 +94,6 @@ export default function PostDetail() {
     })
     return (
         <div>
-            {/* <TextField
-                fullWidth
-                label="Comentário"
-                variant="outlined"
-                margin="normal"
-            /> */}
             <Paper component="form" className={classes.root} onSubmit={onSubmitComment}>
                 <InputBase fullWidth
                     className={classes.input}
@@ -97,7 +104,7 @@ export default function PostDetail() {
                     
                 />
                 <IconButton type="submit" className={classes.iconButton}>
-                    <MessageOutlinedIcon />
+                    <SendIcon/>
                 </IconButton>
                 </Paper>
             {comments}

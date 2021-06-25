@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Toolbar from '@material-ui/core/Toolbar';
 import Button from '@material-ui/core/Button';
 import { thirdColor } from "../../constants/colors";
-
+import Typography from '@material-ui/core/Typography';
 
 export const ButtonHomeContainer = styled.div `
     display: flex;
@@ -28,4 +28,8 @@ export const ToolbarDiv = styled(Toolbar) `
 
 export const ButtonContainer = styled.div `
     margin-right: 5vw;
+`
+
+export const FeedTypography = styled(Typography) `
+    cursor: pointer;
 `

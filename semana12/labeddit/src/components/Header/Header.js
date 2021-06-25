@@ -1,9 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { goToSignUp, goToLogin, goBack, goToHome} from '../../routes/coordinator';
+import { goToSignUp, goToLogin, goToFeed} from '../../routes/coordinator';
 import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
-import { ButtonHomeContainer, ToolbarDiv, StyledButton, ButtonContainer } from './styled';
+import { ButtonHomeContainer, ToolbarDiv, StyledButton, ButtonContainer, FeedTypography } from './styled';
 
 export default function Header({title}) {
     const history = useHistory()
@@ -45,9 +44,9 @@ export default function Header({title}) {
     return (
     <AppBar position="static">
         <ToolbarDiv>
-          <Typography variant="h6" >
+          <FeedTypography variant="h6" onClick={() => goToFeed(history)} >
             LabEddit
-          </Typography>
+          </FeedTypography>
             {showHeader()}
         </ToolbarDiv>
       </AppBar>

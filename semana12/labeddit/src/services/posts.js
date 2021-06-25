@@ -35,12 +35,85 @@ export const createPost = (body, clear, setPosts) => {
 export const createComment = (body, id, clear, getData) => {
 
     axios.post(`${BASE_URL}/posts/${id}/comments`, body, {headers: {Authorization: token}})
-    .then((res) => {
-        console.log(res)
+    .then(() => {
         clear()
         getData()
     })
     .catch((err) => {
-        console.log(err.response)
+        alert(err.response.data.message)
     }) 
+}
+
+export const createVotePost = (direction, id, setPosts) => {
+    const body = {
+        direction: direction,
+    }
+    axios.post(`${BASE_URL}/posts/${id}/votes`, body, {headers: {Authorization: token}})
+    .then(() => {
+        getPosts(setPosts)
+    })
+    .catch((err) => {
+        alert(err.response.data.message)
+    })
+}
+export const changeVotePost = (direction, id, setPosts) => {
+    const body = {
+        direction: direction,
+    }
+    axios.put(`${BASE_URL}/posts/${id}/votes`, body, {headers: {Authorization: token}})
+    .then(() => {
+        getPosts(setPosts)
+    })
+    .catch((err) => {
+        alert(err.response.data.message)
+    })
+}
+
+export const deleteVotePost = (id, setPosts) => {
+
+    axios.delete(`${BASE_URL}/posts/${id}/votes`, {headers: {Authorization: token}})
+    .then(() => {
+        getPosts(setPosts)
+    })
+    .catch((err) => {
+        alert(err.response.data)
+    })
+}
+
+export const createVoteComment = (direction, id, getData) => {
+    const body = {
+        direction: direction,
+    }
+    axios.post(`${BASE_URL}/comments/${id}/votes`, body, {headers: {Authorization: token}})
+    .then(() => {
+        getData()
+    })
+    .catch((err) => {
+        alert(err.response.data.message)
+    })
+}
+
+export const changeVoteComment = (direction, id, getData) => {
+    const body = {
+        direction: direction,
+    }
+    axios.put(`${BASE_URL}/comments/${id}/votes`, body, {headers: {Authorization: token}})
+    .then(() => {
+        getData()
+    })
+    .catch((err) => {
+        alert(err.response.data.message)
+    })
+}
+
+export const deleteVoteComment = (id, getData) => {
+
+    axios.delete(`${BASE_URL}/comments/${id}/votes`, {headers: {Authorization: token}})
+    .then(() => {
+        getData()
+    })
+    .catch((err) => {
+        alert(err.response.data)
+    })
+
 }

@@ -26,6 +26,10 @@ export const StyledContent = styled(CardContent) `
     flex-direction: column;
     justify-content: space-around;
     box-shadow: 1px 1px 1px 1px;
+    :hover {
+        opacity: 0.6
+    };
+    cursor: pointer;
 `
 export const StyledActions = styled(CardActions) `
     display: flex;
@@ -43,5 +47,19 @@ export const ButtonContainer = styled.div `
 export const UserContainer = styled.div `
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+`
+
+export const ReactionsContainer = styled.div `
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
+export const VotesContainer = styled.div `
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 `

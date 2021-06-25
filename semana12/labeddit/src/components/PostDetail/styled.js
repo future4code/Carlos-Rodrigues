@@ -52,3 +52,16 @@ export const CommentContainer = styled.div `
     margin-top: 2vh;
     margin-bottom: 2vh;
 `
+export const ReactionsContainer = styled.div `
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
+export const VotesContainer = styled.div `
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
