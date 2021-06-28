@@ -1,9 +1,12 @@
 import React from 'react'
+import { ErrorContainer, StyledButton } from './styled'
+import { goToLogin } from '../../routes/coordinator'
+import { useHistory } from 'react-router'
 
 export default function ErrorPage() {
-
+    const history = useHistory()
     return (
-        <div>
+        <ErrorContainer>
             <img 
                 src="https://media4.giphy.com/media/xTiN0L7EW5trfOvEk0/giphy.gif"
                 width="480"
@@ -11,6 +14,9 @@ export default function ErrorPage() {
                 frameBorder="0"
                 alt="Error"
             />
-        </div>
+            <div>
+                <StyledButton variant="outlined" color="inherit" onClick={() => goToLogin(history)}>Fazer Login</StyledButton>
+            </div>
+        </ErrorContainer>
     )
 }

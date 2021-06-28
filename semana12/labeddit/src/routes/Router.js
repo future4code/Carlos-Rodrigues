@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import HomePage from '../pages/HomePage/HomePage';
 import LoginPage from '../pages/LoginPage/LoginPage';
 import SignUpPage from '../pages/SignUpPage/SignUpPage';
 import FeedPage from '../pages/FeedPage/FeedPage';
@@ -15,10 +14,6 @@ export default function Router() {
             
             <Switch>
                 <Route exact path="/">
-                    <HomePage/>
-                </Route>
-
-                <Route exact path="/login">
                     <LoginPage/>
                 </Route>
 
