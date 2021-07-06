@@ -1,12 +1,13 @@
 import React from "react";
 import Teste from './components/Teste/Teste'
+import GlobalState from "./global/GlobalState";
 
 function App() {
   return (
-    <div>
+    <GlobalState>
       Bora lá !
       <Teste/>
-    </div>
+    </GlobalState>
   );
 }
 
