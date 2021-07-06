@@ -1,12 +1,11 @@
 import React from "react";
-import Teste from './components/Teste/Teste'
+import Router from './routes/Router'
 import GlobalState from "./global/GlobalState";
 
 function App() {
   return (
     <GlobalState>
-      Bora lá !
-      <Teste/>
+      <Router/>
     </GlobalState>
   );
 }
