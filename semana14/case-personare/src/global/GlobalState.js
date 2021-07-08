@@ -7,12 +7,13 @@ const GlobalState = (props) => {
     const [frontUrl, setFrontUrl] = useState([])
     const [backUrl, setBackUrl] = useState([])
     const [flipCard, setFlipCard] = useState(false)
+    const [chosedCard, setChosedCard] = useState([])
  
     useEffect(() => {
         getCards(setCards, setFrontUrl, setBackUrl)
     }, [])
 
-    const data = {cards, frontUrl, backUrl, flipCard, setFlipCard}
+    const data = {cards, frontUrl, backUrl, flipCard, chosedCard, setFlipCard, setChosedCard}
     return (
         <GlobalStateContext.Provider value={data}>
             {props.children}
