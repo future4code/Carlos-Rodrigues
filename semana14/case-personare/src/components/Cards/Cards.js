@@ -1,24 +1,29 @@
 import React, { useContext } from 'react'
 import GlobalStateContext from '../../global/GlobalStateContext'
-import Carousel from 'react-elastic-carousel'
+import { CardContainer, Container, Img } from './styled'
 
 const Cards = () => {
-    const {cards, frontUrl} = useContext(GlobalStateContext)
+    const {cards, frontUrl, backUrl ,flipCard} = useContext(GlobalStateContext)
 
     const cardImages = cards.map((card) => {
-        return (
-            <img key={card.name} src={`${frontUrl}${card.image}`} alt={card.name}/>
-        )
+        if (flipCard === false) {
+            return (
+                    <Img key={card.name} src={`${frontUrl}${card.image}`} alt={card.name}/>
+            )
+        } else if (flipCard === true) {
+            return (
+                <Img src={backUrl}/>
+            )
+        }
     })
     
 
     return (
-        <div>
-            <Carousel itemsToShow={10} itemsToScroll={5} itemPadding={[10, 100]} >
+        <Container>
+            <CardContainer>
                 {cardImages}
-            </Carousel>
-            <button>Jogar</button>
-        </div>
+            </CardContainer>
+        </Container>
     )
 }
 

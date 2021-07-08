@@ -8,7 +8,7 @@ export const getCards = (setCards, setFrontUrl, setBackUrl) => {
         setBackUrl(res.data.imageBackCard)
     })
     .catch((err) => {
-        console.log(err)
+        alert(err.response)
     })
 
 }
