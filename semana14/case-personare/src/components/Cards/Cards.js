@@ -59,7 +59,7 @@ const Cards = () => {
             return (
                 cards.map((card) => {
                     return (
-                        <BackImg src={backUrl} key={card.name} onClick={() => onClickCard(card)}/>
+                        <BackImg src={backUrl} key={card.name} onClick={() => onClickCard(card)} alt={card.name} />
                     )
                 }).sort(() => {
                     return (
@@ -74,7 +74,7 @@ const Cards = () => {
         if (chosedCard.image !== undefined) {
             const image = `${frontUrl}${chosedCard.image}`
             return (
-                <img src={image}/>
+                <img src={image} alt={chosedCard.name}/>
             )
         }
     }
