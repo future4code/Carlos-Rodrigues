@@ -1,3 +1,4 @@
+import { addUser } from './endpoints/addUser';
 import { app } from './app'
 import { getAllUsers } from './endpoints/getAllUsers'
 import { getUserByName } from './endpoints/getUserByName'
@@ -17,3 +18,7 @@ app.get("/users", getAllUsers )
 //a) Para esse exercício eu utilizei o path params.
 
 app.get("/users/:name", getUserByName)
+
+//Exercício 4:
+
+app.post("/users", addUser)

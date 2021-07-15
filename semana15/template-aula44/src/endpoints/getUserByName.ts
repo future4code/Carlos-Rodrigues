@@ -7,7 +7,7 @@ export const getUserByName = (
     res: Response
 ) => {
     const userName: string = req.params.name
-    const userByName = users.filter((user) => user.name.toLowerCase() === userName.toLowerCase())
+    const userByName: User[] = users.filter((user) => user.name.toLowerCase() === userName.toLowerCase())
 
     if (userByName.length === 0) {
         res.status(404).send({message: "User not found."})
