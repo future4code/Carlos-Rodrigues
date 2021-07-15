@@ -1,6 +1,7 @@
 import { Request, Response } from "express"
 import { countries } from "../data"
 import { country } from "../types"
+
 export const getCountryById = (
     req: Request,
     res: Response
