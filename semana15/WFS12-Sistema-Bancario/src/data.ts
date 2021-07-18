@@ -1,5 +1,5 @@
-import { User } from "./types";
+import { Account } from "./types";
 
-export let users: User[] = [
+export let users: Account[] = [
     
 ]

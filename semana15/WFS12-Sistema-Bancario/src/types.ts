@@ -1,13 +1,13 @@
-export type User = {
+export type Account = {
     name: string
-    CPF: number
-    birthday: string
+    CPF: string
+    birthDate: Date
     balance: number
-    movement: Transactions | string
+    statement: Transactions[]
 }
 
 export type Transactions = {
     value: number
     description: string
-    date: string
+    date: Date
 }
