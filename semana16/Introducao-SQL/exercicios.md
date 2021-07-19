@@ -56,7 +56,7 @@ Erro ocorreu, porque ao invés de procurar pelo campo 'name' foi colocado 'nome'
 <br/>
 `SELECT id, name from Actor WHERE id = "002"`
 
-# Exercício 4: 
+## Exercício 4: 
 
 a) 
 ```
@@ -84,7 +84,7 @@ SELECT * FROM Actor
 WHERE (name LIKE "%G%" OR name LIKE "%A%") AND  (salary BETWEEN 350000 AND 900000);
 ```
 
-# Exercício 5: 
+## Exercício 5: 
 
 a) 
 ```
@@ -143,4 +143,50 @@ VALUES (
     "2013-10-25",
     7
 );
+```
+
+## Exercício 6: 
+
+a) 
+```
+SELECT id, name, rating FROM Movie
+WHERE id = "001";
+```
+
+b) 
+```
+SELECT * FROM Movie
+WHERE name = "Se eu Fosse Você";
+```
+
+c) 
+```
+SELECT id, name, synopsis FROM Movie
+WHERE rating > 7 ;
+```
+
+## Exercício 7:
+
+a)
+```
+SELECT * FROM Movie
+WHERE name LIKE "%vida%";
+```
+
+b) 
+```
+SELECT * FROM Movie
+WHERE name OR synopsis LIKE "%TERMO DE BUSCA%";
+```
+
+c) 
+```
+SELECT * FROM Movie
+WHERE release_date <= CURRENT_DATE();
+```
+
+d) 
+```
+SELECT * FROM Movie
+WHERE release_date <= CURRENT_DATE() AND (name OR synopsis LIKE "%TERMO DE BUSCA%") AND rating > 7;
 ```
