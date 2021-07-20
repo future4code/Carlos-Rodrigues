@@ -115,3 +115,92 @@ GROUP BY gender;
 ## Exercício 6:
 
 a)
+```
+ALTER TABLE Movie
+ADD playing_limit_date DATE;
+```
+
+b)
+```
+ALTER TABLE Movie
+CHANGE rating rating FLOAT NOT NULL;
+```
+
+c)
+```
+UPDATE Movie
+SET playing_limit_date = "2021-10-25"
+WHERE id = "001";
+```
+
+```
+UPDATE Movie
+SET playing_limit_date  = "1949-01-01"
+WHERE id = "002";
+```
+
+d) Aparece a resposta de que o método deu certo, mas não faz nenhuma alteração, já que não existe essa linha da tabela.
+
+## Exercício 7:
+
+a)
+```
+SELECT COUNT(*),  FROM Movie
+WHERE rating > 7.5;
+```
+
+b)
+```
+SELECT AVG(rating) FROM Movie;
+```
+
+c) 
+```
+SELECT COUNT(*) FROM Movie;
+```
+
+d)
+```
+SELECT COUNT(*) FROM Movie
+WHERE CURDATE() < release_date;
+```
+
+e)
+```
+SELECT MAX(rating) FROM Movie;
+```
+
+f)
+```
+SELECT MIN(rating) FROM Movie;
+```
+
+## Exercício 8:
+
+a)
+```
+SELECT * FROM Movie
+ORDER BY title ASC;
+```
+
+b)
+```
+SELECT * FROM Movie
+ORDER BY title DESC
+LIMIT 5;
+```
+
+c)
+```
+SELECT * FROM Movie
+ORDER BY release_date DESC
+LIMIT 3;
+```
+
+d)
+```
+SELECT * FROM Movie
+ORDER BY rating DESC
+LIMIT 3;
+```
+
