@@ -2,6 +2,10 @@
 // um número a uma string.
 
 // b) Não, pelo mesmo motivo, o typescript não aceita uma váriavel diferente do tipo declarado.
+
+const minhaString: string = ""
+const meuNumero: number = 10
+
 enum CORES {
     VERMELHO = "Vermelho",
     LARANJA = "Laranja",
@@ -20,5 +24,3 @@ type pessoa = {
     corDosOlhos: string
     corDoCabelo: string
 }
-
-
