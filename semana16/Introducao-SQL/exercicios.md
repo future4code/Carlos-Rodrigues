@@ -16,7 +16,7 @@ a)
 ```
 INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES (
-	"002",
+    "002",
     "Glória Pires",
     1200000,
     "1963-08-23",
@@ -89,11 +89,11 @@ WHERE (name LIKE "%G%" OR name LIKE "%A%") AND  (salary BETWEEN 350000 AND 90000
 a) 
 ```
 CREATE TABLE Movie (
-	id VARCHAR(255) PRIMARY KEY,
+    id VARCHAR(255) PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     synopsis TEXT NOT NULL,
     release_date DATE NOT NULL,
-	rating TINYINT NOT NULL
+    rating TINYINT NOT NULL
 );
 ```
 
@@ -101,7 +101,7 @@ b)
 ```
 INSERT INTO Movie (id, name, synopsis, release_date, rating)
 VALUES (
-	"001",
+    "001",
     "Se Eu Fosse Você",
     "Cláudio e Helena são casados há muitos anos e enfrentam a rotina do casamento. Um dia eles são atingidos por um fenômeno inexplicável e trocam de corpos",
     "2006-01-06",
@@ -113,7 +113,7 @@ c)
 ```
 INSERT INTO Movie (id, name, synopsis, release_date, rating)
 VALUES (
-	"002",
+    "002",
     "Doce de mãe",
     "Dona Picucha, uma animada senhora de 85 anos, sempre causa grandes confusões. A vida dela e dos seus quatro filhos sofre uma reviravolta depois que Zaida, empregada e amiga de Dona Picucha, anuncia que vai se casar e não poderá mais morar com ela",
     "2012-12-27",
@@ -125,7 +125,7 @@ d)
 ```
 INSERT INTO Movie (id, name, synopsis, release_date, rating)
 VALUES (
-	"003",
+    "003",
     "Dona Flor e Seus Dois Maridos",
     "Dona Flor é uma sedutora professora de culinária casada com Vadinho, que só quer saber de farras e jogatina nas boates. A vida de abusos acaba por acarretar sua morte precoce.",
     "2017-11-02",
@@ -137,7 +137,7 @@ e)
 ```
 INSERT INTO Movie (id, name, synopsis, release_date, rating)
 VALUES (
-	"004",
+    "004",
     "Meu passado me condena",
     "Quando Fábio e Miá se encontram, é amor à primeira vista. Eles se casam um mês depois de se conhecerem e decidem viajar à Europa em um cruzeiro em lua de mel. Só que, durante a viagem, eles encontram seus antigos namorados, Beto e Laura, que hoje estão juntos e também passam sua lua de mel.",
     "2013-10-25",
