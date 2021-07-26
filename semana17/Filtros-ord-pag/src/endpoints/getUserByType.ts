@@ -7,8 +7,9 @@ export default async function getUserByType(
     res: Response
 ): Promise<void> {
     try {
-        const type = req.params.type 
-        const users = await selectType(type)
+        const type = req.params.type
+        const name = req.query.name || "%"
+        const users = await selectType(type, name)
         res.status(200).send(users)
     } catch (error) {
         res.status(500).send({
