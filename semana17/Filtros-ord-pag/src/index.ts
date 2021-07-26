@@ -1,4 +1,8 @@
 import { app } from "./app";
-import { getAllRecipes } from "./endpoints/getAllRecipes";
+import getUserByType from "./endpoints/getUserByType";
+import { getUsers } from "./endpoints/getUsers";
 
-app.get("/recipes", getAllRecipes)
+app.get('/user', getUsers)
+
+app.get('/user/:type', getUserByType)
+
