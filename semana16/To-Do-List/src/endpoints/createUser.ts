@@ -10,7 +10,6 @@ export default async function createUser (
         const {name, nickname, email} = req.body
         if ( !name || !nickname || !email) {
             res.status(400).send("Preencha todos os campos")
-            console.log("erro if")
         }
 
         const id: string = Date.now() + Math.random().toString()
