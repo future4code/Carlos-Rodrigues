@@ -13,11 +13,11 @@ export default async function insertTeacher(
         id,
         name,
         email,
-        birth_date
+        birth_date,
+        class_id
     }).into('labsystem_teachers')
 
     await connection.insert({
-        class_id,
         expertise
     }).into('labsystem_expertise')
 }

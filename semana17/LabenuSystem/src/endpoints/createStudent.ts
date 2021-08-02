@@ -8,7 +8,7 @@ export default async function createStudent (
 ) {
     let errorCode = 400
     try {
-        const id = Number(Date.now() + Math.random())
+        const id = Number(Math.floor(Date.now() + Math.random()))
         const {name, email, birth_date, class_id, hobbies}: Student = req.body
 
         if (!name || !email || !birth_date || !class_id || !hobbies) {
