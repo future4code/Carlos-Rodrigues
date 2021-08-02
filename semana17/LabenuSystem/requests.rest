@@ -1,0 +1,22 @@
+POST http://localhost:3003/class
+Content-Type: application/json
+
+{
+    "name": "Paiva",
+    "start_date": "2021-03-29",
+    "end_date": "2021-10-01",
+    "shift": "noturno"
+}
+
+###
+
+POST http://localhost:3003/student
+Content-Type: application/json
+
+{
+    "name": "teste",
+    "email": "abc@defal.com",
+    "birth_date": "1997-10-01",
+    "class_id": 1,
+    "hobbies": ["Jogar video", "game" ]
+}
