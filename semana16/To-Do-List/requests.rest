@@ -1,0 +1,27 @@
+### GET all users
+GET http://localhost:3003/user
+
+### GET by id
+GET http://localhost:3003/user/16272964359100.0082003944687008
+
+
+### Add user
+
+POST http://localhost:3003/user 
+Content-Type: application/json
+
+{
+    "name": "Astro Dev",
+	"nickname": "astrodev",
+	"email": "astro@dev.com"
+}
+
+### Edit user
+PUT http://localhost:3003/user/edit/16272964359100.0082003944687008
+Content-Type: application/json
+
+{
+	"name": "Astro Nauta",
+	"nickname": "AstroDev",
+	"email": "dev@dev.com"
+}
