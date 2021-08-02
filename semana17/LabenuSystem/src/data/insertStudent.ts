@@ -15,7 +15,7 @@ export default async function insertStudent(
         birth_date,
         class_id
     }).into('labsystem_students')
-
+    
     for (let hobbie of hobbies) {
         await connection.insert({
             hobbie
