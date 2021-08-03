@@ -20,4 +20,8 @@ export default async function insertTeacher(
     await connection.insert({
         expertise
     }).into('labsystem_expertise')
+
+    await connection.insert({
+        teacher_id: id
+    }).into('labsystem_teachers_expertise')
 }

@@ -21,4 +21,8 @@ export default async function insertStudent(
             hobbie
         }).into('labsystem_hobbies')
     }
+
+    await connection.insert({
+        student_id: id
+    }).into('labsystem_students_hobbies')
 }

@@ -5,7 +5,7 @@ Content-Type: application/json
     "name": "Paiva",
     "start_date": "2021-03-29",
     "end_date": "2021-10-01",
-    "shift": "noturno"
+    "shift": "integral"
 }
 
 ###
@@ -15,10 +15,10 @@ Content-Type: application/json
 
 {
     "name": "teste",
-    "email": "abc@deal.com",
+    "email": "abc@ml.com",
     "birth_date": "1997-10-01",
     "class_id": 1,
-    "hobbies": ["Jogar video", "game" ]
+    "hobbies": ["Jogar video", "ler" ]
 }
 
 ###
@@ -28,7 +28,7 @@ Content-Type: application/json
 
 {
     "name": "teste",
-    "email": "abc@defl.com",
+    "email": "abc@defml.com",
     "birth_date": "1997-10-01",
     "class_id": 1,
     "expertise": "frontend"
