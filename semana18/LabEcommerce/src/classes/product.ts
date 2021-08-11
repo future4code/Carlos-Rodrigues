@@ -1,18 +1,16 @@
-export default class Product {
-    private id: number
-    private product: string
-    private description: string
-    private price: number
+import Item from "./item";
 
-    constructor (
+export default class Product extends Item {
+    private product: string
+    constructor(
         id: number,
         product: string,
         description: string,
         price: number
     ) {
-        this.id = id
-        this.product = product,
-        this.description = description,
-        this.price = price
+        super(id, description, price)
+        {
+            this.product = product
+        }
     }
 }

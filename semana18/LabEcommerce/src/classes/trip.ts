@@ -1,13 +1,17 @@
-import Product from "./product";
+import Item from "./item";
 
-export default class Trip extends Product {
+export default class Trip extends Item {
+    private trip: string
 
     constructor(
         id: number,
-        product: string,
+        trip: string,
         description: string,
         price: number
     ) {
-        super(id, product, description, price)
+        super(id,description, price)
+        {
+            this.trip = trip
+        }
     }
 }

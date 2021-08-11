@@ -1,0 +1,33 @@
+POST http://localhost:3003/user
+Content-Type: application/json
+
+{
+    "name": "Du",
+    "email": "du@du.com",
+    "age": 18
+}
+
+###
+
+POST http://localhost:3003/product
+Content-Type: application/json
+
+{
+    "product": "Du dudu",
+    "description": "produto testando",
+    "price": 200
+}
+
+
+###
+POST http://localhost:3003/trip
+Content-Type: application/json
+
+{
+    "trip": "marte",
+    "description": "viagem teste para marte",
+    "price": 90000
+}
+
+###
+GET http://localhost:3003/user

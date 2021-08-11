@@ -6,15 +6,15 @@ export default async function createUser(
     req: Request,
     res: Response
 ): Promise<void> {
-    let errorCode = 500
+    let errorCode = 400
     try {
         const id = Math.floor(Date.now() + Math.random())
         const {name, email, age} = req.body
-        
         if (!name || !email || !age) {
             errorCode = 400
-            throw new Error
+            throw new Error("Preencha todos os campos.")
         }
+
         const user = new User(id, name, email, age)
         const database = new UserDatabase()
 
