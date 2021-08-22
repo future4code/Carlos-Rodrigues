@@ -1,0 +1,18 @@
+POST http://localhost:3003/createuser
+Content-Type: application/json
+
+{
+    "name": "João",
+    "nickname": "Johnny",
+    "email": "joao@email.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+    "email": "joao@email.com",
+    "password": "123456" 
+}
