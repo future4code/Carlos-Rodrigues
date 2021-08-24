@@ -44,7 +44,6 @@ export default async function createUser(
       res.status(201).send({ token })
 
    } catch (error) {
-      console.log(error)
       if (res.statusCode === 200) {
          res.status(500).send({ message: "Internal server error" })
       } else {
