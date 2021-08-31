@@ -13,15 +13,16 @@ export async function signup(req: Request, res: Response): Promise<void> {
 
     const userDatabase = new UserDatabase();
     const user = await userDatabase.findUserByEmail(email);
+
     const hashManager = new HashManager();
     const hashPassword = await hashManager.hash(password);
-    
+
     if (!name || !email || !password || !role) {
       res.statusCode = 422;
       throw new Error("Preencha todos os campos corretamente.'");
     }
     if (user) {
-      res.status(409).send("Esse e-mail já está cadastrado.");
+      throw new Error("Esse e-mail já está cadastrado.");
     }
 
     const newUser = new User(id, name, email, hashPassword, role);

@@ -15,15 +15,14 @@ export class UserDatabase extends BaseDatabase {
       throw new Error(error.message || error.sqlMessage);
     }
   }
-  public async findUserByEmail(email: string): Promise<any> {
+  public async findUserByEmail(email: string): Promise<User> {
     try {
-      const user = await BaseDatabase.connection("cookenu_users").where({
-        email,
-      });
-      if (user.length > 0) {
-        throw new Error("E-mail já cadastrado");
-      }
-      
+      const user = await BaseDatabase.connection("cookenu_users")
+        .select("*")
+        .where({
+          email,
+        });
+        return user[0] && User.toUserModel(user[0])
     } catch (error) {
       throw new Error(error.message || error.sqlMessage);
     }
