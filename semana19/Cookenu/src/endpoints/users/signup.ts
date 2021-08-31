@@ -15,7 +15,7 @@ export async function signup(req: Request, res: Response): Promise<void> {
     const user = await userDatabase.findUserByEmail(email);
     const hashManager = new HashManager();
     const hashPassword = await hashManager.hash(password);
-
+    
     if (!name || !email || !password || !role) {
       res.statusCode = 422;
       throw new Error("Preencha todos os campos corretamente.'");
