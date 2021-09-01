@@ -27,4 +27,17 @@ export class UserDatabase extends BaseDatabase {
       throw new Error(error.message || error.sqlMessage);
     }
   }
+
+  public async findUserById(id: string): Promise<User> {
+    try {
+      const user = await BaseDatabase.connection("cookenu_users")
+        .select("*")
+        .where({
+          id,
+        });
+        return user[0] && User.toUserModel(user[0])
+    } catch (error) {
+      throw new Error(error.message || error.sqlMessage);
+    }
+  }
 }
