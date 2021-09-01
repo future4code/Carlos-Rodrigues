@@ -19,6 +19,11 @@ Content-Type: application/json
 }
 
 ###
-
+# @name profile
 GET http://localhost:3003/user
+Authorization: {{login.response.body.token}}
+
+###
+
+GET http://localhost:3003/user/{{profile.response.body.id}}
 Authorization: {{login.response.body.token}}
