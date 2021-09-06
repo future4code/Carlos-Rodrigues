@@ -18,7 +18,6 @@ export async function getUserById(req: Request, res: Response) {
     }
 
     res.send({
-      id: user.getId(),
       name: user.getName(),
       email: user.getEmail(),
       role: user.getRole(),
