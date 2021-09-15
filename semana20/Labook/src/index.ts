@@ -7,46 +7,18 @@ import { connection } from "./connection";
 import { IdGenerator } from "./services/IdGenerator";
 import { HashManager } from "./services/HashManager";
 import { Authenticator } from "./services/Authenticator";
+import { postsRouter } from "./routes/postRouter";
+import { createPostController } from "./controller/post/createPostController";
+import { selectUserByEmail } from "./data/user/selectUserByEmail";
+import { insertUser } from "./data/user/insertUser";
 
-const authenticator = new Authenticator()
-const hashManager = new HashManager()
-const idGenerator = new IdGenerator()
-
+const authenticator = new Authenticator();
+const hashManager = new HashManager();
+const idGenerator = new IdGenerator();
 
 /**************************** ENDPOINTS ******************************/
 
-app.post("/users/signup", async (req: Request, res: Response) => {
-  try {
-    let message = "Success!";
-    const { name, email, password } = req.body;
 
-    if (!name || !email || !password) {
-      res.statusCode = 406;
-      message = '"name", "email" and "password" must be provided';
-      throw new Error(message);
-    }
-
-    const id: string = idGenerator.generateId();
-
-    const cypherPassword = await hashManager.hash(password);
-
-    await connection("labook_users").insert({
-      id,
-      name,
-      email,
-      password: cypherPassword,
-    });
-
-    const token: string = authenticator.generateToken({ id });
-
-    res.status(201).send({ message, token });
-  } catch (error) {
-    res.statusCode = 400;
-    let message = error.sqlMessage || error.message;
-
-    res.send({ message });
-  }
-});
 
 app.post("/users/login", async (req: Request, res: Response) => {
   try {
@@ -60,24 +32,12 @@ app.post("/users/login", async (req: Request, res: Response) => {
       throw new Error(message);
     }
 
-    const queryResult: any = await connection("labook_users")
-      .select("*")
-      .where({ email });
+    const user = await selectUserByEmail(email);
 
-    if (!queryResult[0]) {
-      res.statusCode = 401;
-      message = "Invalid credentials";
-      throw new Error(message);
-    }
-
-    const user: user = {
-      id: queryResult[0].id,
-      name: queryResult[0].name,
-      email: queryResult[0].email,
-      password: queryResult[0].password,
-    };
-
-    const passwordIsCorrect: boolean = await hashManager.compare(password, user.password);
+    const passwordIsCorrect: boolean = await hashManager.compare(
+      password,
+      user.password
+    );
 
     if (!passwordIsCorrect) {
       res.statusCode = 401;
@@ -90,35 +50,6 @@ app.post("/users/login", async (req: Request, res: Response) => {
     });
 
     res.status(200).send({ message, token });
-  } catch (error) {
-    let message = error.sqlMessage || error.message;
-    res.statusCode = 400;
-
-    res.send({ message });
-  }
-});
-
-app.post("/posts/create", async (req: Request, res: Response) => {
-  try {
-    let message = "Success!";
-
-    const { photo, description, type } = req.body;
-
-    const token: string = req.headers.authorization as string;
-
-    const tokenData: authenticationData = authenticator.getTokenData(token);
-
-    const id: string = idGenerator.generateId();
-
-    await connection("labook_posts").insert({
-      id,
-      photo,
-      description,
-      type,
-      author_id: tokenData.id,
-    });
-
-    res.status(201).send({ message });
   } catch (error) {
     let message = error.sqlMessage || error.message;
     res.statusCode = 400;
@@ -160,5 +91,3 @@ app.get("/posts/:id", async (req: Request, res: Response) => {
     res.send({ message });
   }
 });
-
-/**************************** SERVER INIT ******************************/
