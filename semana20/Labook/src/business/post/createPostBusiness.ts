@@ -5,6 +5,7 @@ import { authenticationData } from "../../types/authenticationData";
 
 export const createPostBusiness = async ({ postData }: any) => {
   const authenticator = new Authenticator();
+  
   const tokenData: authenticationData = authenticator.getTokenData(
     postData.token
   );

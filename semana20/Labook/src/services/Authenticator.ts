@@ -12,6 +12,6 @@ export class Authenticator {
   public getTokenData(token: string): authenticationData {
     const result: any = jwt.verify(token, process.env.JWT_KEY as string);
 
-    return { id: result.id };
+    return { id: result.id, role: result.role };
   }
 }

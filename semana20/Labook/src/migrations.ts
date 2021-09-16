@@ -1,7 +1,8 @@
-import { connection } from "./index"
+import { connection } from "./connection";
 
 connection
-   .raw(`
+  .raw(
+    `
       CREATE TABLE IF NOT EXISTS labook_users(
          id VARCHAR(255) PRIMARY KEY,
          name VARCHAR(255) NOT NULL,
@@ -18,6 +19,7 @@ connection
          author_id VARCHAR(255),
          FOREIGN KEY (author_id) REFERENCES labook_users (id)
       )
-   `)
-   .then(console.log)
-   .catch(console.log)
+   `
+  )
+  .then(console.log)
+  .catch(console.log);
