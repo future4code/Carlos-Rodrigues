@@ -5,12 +5,22 @@ export const Title = styled.h1`
   text-align: center;
 `;
 
+export const Main = styled.div`
+  height: 100vh;
+  overflow-x: hidden;
+`;
+
 export const Dashboard = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   margin-top: 15vh;
+  height: fit-content;
+
+  @media screen and (max-height: 700px) {
+    margin-top: 2vh;
+  }
 
   @media screen and (max-width: 722px) {
     height: fit-content;

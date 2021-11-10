@@ -10,6 +10,7 @@ import {
   Title,
   SpinnerContainer,
   StyledSpinner,
+  Main,
 } from "./styled";
 
 const Home = () => {
@@ -46,11 +47,11 @@ const Home = () => {
     );
   };
   return (
-    <div>
+    <Main>
       <Header />
       <Title>DATA</Title>
       {renderPage()}
-    </div>
+    </Main>
   );
 };
 
